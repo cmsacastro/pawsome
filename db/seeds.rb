@@ -35,3 +35,7 @@ puts "cat created"
 enquiry_one = Enquiry.new(pet_id: dog.id, user_id: user_one.id, message: "I would like to adopt this dog, even though cats are obviously better")
 enquiry_one.save!
 puts "enquiry made by Seb Saunier about the dog from Battersea"
+
+enquiry_two = Enquiry.new(pet_id: cat.id, user_id: user_two.id, message: "I would like to adopt this cat, because cats are obviously better")
+enquiry_two.save!
+puts "enquiry made by Battersea about the dog from Battersea"
