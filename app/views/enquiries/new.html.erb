@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>I am the enquiry form</h1>
+  <h2>does this work?</h2>
+  <div class="p-4">
+    <%= simple_form_for [@pet, @enquiry] do |f| %>
+      <%= f.input :message, label: 'Write a message', placeholder: "eg: Is this pet available?" %>
+      <%= f.submit 'Submit enquiry', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

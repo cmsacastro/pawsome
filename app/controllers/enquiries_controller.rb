@@ -3,9 +3,9 @@ class EnquiriesController < ApplicationController
     #  this is moved to UsersController
   end
 
-  # def show
+  def show
 
-  # end
+  end
 
   def new
     @pet = Pet.find(params[:pet_id])
