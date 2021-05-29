@@ -1,0 +1,46 @@
+<div style="margin: 56px;">
+  <div>
+    <h1>Meet <%= @pet.name %></h1>
+  </div>
+  <div>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier"%>
+  </div>
+  <div style="display: flex; justify-content: space-between;">
+    <div>
+      <h2>About me</h2>
+      <hr>
+      <div>
+        <h4>Breed</h4>
+        <%= @pet.breed %>
+        <h4>Age</h4>
+        <%= @pet.age %>
+        <h4>Status</h4>
+        <%= @pet.status%>
+      </div>
+      <div>
+        <hr>
+        <h4>Description</h4>
+        <%= @pet.description %>
+      </div>
+    </div>
+    <div>
+      <div>
+        <h4>Adoption Fee</h4>
+        <p>£<%= @pet.cost %></p>
+        <hr>
+      </div>
+      <div>
+        <h4>Adoption Centre</h4>
+        <p><%= @pet.user.company_name %></p>
+        <hr>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <p><%= @pet.address %></p>
+        <hr>
+      </div>
+      <%= link_to "Find out more about me"%>
+    </div>
+  </div>
+</div>
+
