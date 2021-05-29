@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_29_112602) do
+ActiveRecord::Schema.define(version: 2021_05_29_183948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 2021_05_29_112602) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "enquiries", force: :cascade do |t|
     t.text "message"
     t.bigint "pet_id", null: false
@@ -44,6 +50,16 @@ ActiveRecord::Schema.define(version: 2021_05_29_112602) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pet_id"], name: "index_enquiries_on_pet_id"
     t.index ["user_id"], name: "index_enquiries_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -72,6 +88,7 @@ ActiveRecord::Schema.define(version: 2021_05_29_112602) do
     t.string "first_name"
     t.string "last_name"
     t.string "company_name"
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -79,4 +96,6 @@ ActiveRecord::Schema.define(version: 2021_05_29_112602) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "enquiries", "pets"
   add_foreign_key "enquiries", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
 end
