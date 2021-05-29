@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_05_29_111540) do
+=======
+
+>>>>>>> d89697356748dc7fd7b9ade3a056342c34ffedb5
+
+ActiveRecord::Schema.define(version: 2021_05_29_112602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +57,7 @@ ActiveRecord::Schema.define(version: 2021_05_29_111540) do
     t.string "species"
     t.integer "age"
     t.string "breed"
-    t.string "status"
+    t.string "status", default: "available"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
