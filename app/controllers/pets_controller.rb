@@ -1,5 +1,4 @@
 class PetsController < ApplicationController
-
   def index
     @pets = Pet.all
   end
@@ -15,9 +14,9 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
   end
-end
 
-
-def pet_params
-  params.require(:pet).permit(:name, :specie, :age, :breed, :description, :address, :cost)
+private
+  def pet_params
+    params.require(:pet).permit(:name, :specie, :age, :breed, :description, :address, :cost)
+  end
 end
