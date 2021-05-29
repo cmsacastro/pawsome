@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_202352) do
-
+ActiveRecord::Schema.define(version: 2021_05_29_103121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "enquiries", force: :cascade do |t|
+    t.text "message"
+    t.bigint "pet_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pet_id"], name: "index_enquiries_on_pet_id"
+    t.index ["user_id"], name: "index_enquiries_on_user_id"
+  end
+
   create_table "pets", force: :cascade do |t|
     t.string "name"
-    t.string "specie"
+    t.string "species"
     t.integer "age"
     t.string "breed"
     t.string "status"
@@ -46,4 +55,6 @@ ActiveRecord::Schema.define(version: 2021_05_27_202352) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "enquiries", "pets"
+  add_foreign_key "enquiries", "users"
 end
