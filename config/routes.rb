@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :pets do
     resources :enquiries, only: [:new, :create]
+    
+  end
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :enquiries, only: [:index, :show, :edit, :update, :destroy]
