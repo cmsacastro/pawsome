@@ -39,3 +39,41 @@ puts "enquiry made by Seb Saunier about the dog from Battersea"
 enquiry_two = Enquiry.new(pet_id: cat.id, user_id: user_two.id, message: "I would like to adopt this cat, because cats are obviously better")
 enquiry_two.save!
 puts "enquiry made by Battersea about the dog from Battersea"
+
+
+user_test = User.new(email: "test@example.com",
+  password: "123456",
+  first_name: "Seb",
+  last_name: "Saunier",
+  company_name: "",
+  nickname: "sebby",
+  species: "dog",
+  breed: "labrador",
+  age: "5",
+  other_pets: true,
+  other_children: false,
+  available_time: "5",
+  garden: false,
+  special_needs: true )
+user_test.save!
+puts "Seb Saunier created. He wants to adopt a pet"
+
+dog_test = Pet.new(
+  name: "Test",
+  species: "dog",
+  age: 5,
+  breed: "labrador",
+  status: "avaiable",
+  description: "This is a dog. It is worse than a cat",
+  user_id: user_two.id,
+  address: "Battersea SW10",
+  cost: 100,
+  other_pets: false,
+  other_children: true,
+  available_time: "5",
+  garden: false,
+  special_needs: true
+  )
+dog_test.save!
+puts "dog created"
+
