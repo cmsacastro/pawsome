@@ -2,7 +2,11 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   
   def index
-    @pets = Pet.all
+    if current_user && current_user.species.present?
+        @pets = Pet.where(species: current_user.species).sort_by{ |pet| -pet.match_pets(current_user) }
+    else
+      @pets = Pet.all
+    end
   end
 
   def show
@@ -21,4 +25,5 @@ private
   def pet_params
     params.require(:pet).permit(:name, :species, :age, :breed, :description, :address, :cost)
   end
+
 end

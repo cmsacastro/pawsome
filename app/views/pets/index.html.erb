@@ -3,6 +3,9 @@
 <div class="container">
 <p><% @pets.each do |pet| %></p>
 <p>-------------------------</p>
+<% if current_user %>
+  <p style="color:red"><%= pet.match_pets(current_user) %></p>
+<% end %>
 <p><%= pet.address %></p>
 <p><%= pet.name %></p>
 <p><%= pet.breed %></p>
