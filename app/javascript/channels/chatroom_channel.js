@@ -10,11 +10,10 @@ const initChatroomCable = () => {
         console.dir(messagesContainer.lastElementChild.id); // called when data is broadcast in the cable
         messagesContainer.insertAdjacentHTML('beforeend', data);
         // get the message container
-
         // const newMessage = document.querySelector(messagesContainer.lastElementChild.id);
         // newMessage.scrollIntoView(false); // this was suggested by a TA and way too complicated
         window.scrollTo(0,document.body.scrollHeight);
-        //
+        // TODO: render notification on the navbar
       },
     });
   }

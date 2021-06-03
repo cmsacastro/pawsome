@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-show.html.erb
-=======
 <div style="margin: 56px;">
   <div>
     <h1>Meet <%= @pet.name %></h1>
@@ -46,5 +43,5 @@ show.html.erb
     </div>
   </div>
 </div>
-
->>>>>>> d89697356748dc7fd7b9ade3a056342c34ffedb5
+<!-- TODO: make the path go to the chatroom create, with params including both buyer and seller -->
+<%= link_to 'Start a conversation', chatroom_path(Chatroom.create(name:"Chat between #{current_user.nickname} and #{@pet.user.nickname}")), class: 'btn btn-primary' %>
