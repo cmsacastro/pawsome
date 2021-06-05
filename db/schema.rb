@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_06_05_153513) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,7 +96,6 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
     t.string "first_name"
     t.string "last_name"
     t.string "company_name"
-    t.string "nickname"
     t.boolean "garden", default: false
     t.boolean "other_children", default: false
     t.boolean "other_pets", default: false
@@ -105,6 +106,8 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
     t.text "description"
     t.string "address"
     t.string "sex", default: "no preference"
+    t.boolean "special_needs", default: false
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

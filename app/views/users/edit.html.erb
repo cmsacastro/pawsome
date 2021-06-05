@@ -1,0 +1,6 @@
+<div>
+  <%= simple_form_for(@user , url: preference_path, :method => :get) do |f| %>
+    <%= f.input :breed %>
+    <%= f.submit "Submit review" %>
+  <% end %>
+</div>
