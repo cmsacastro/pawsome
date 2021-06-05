@@ -3,6 +3,12 @@
 <div class="container">
 <p><% @pets.each do |pet| %></p>
 <p>-------------------------</p>
+  <%# <% pet.photos.each do |photo| %>
+  
+    <%= cl_image_tag pet.photos.first.key, height: 300, width: 400, crop: :fill %>
+    <%# <%=pet.photos.first.key%>
+  <%# <%end%>
+  
 <% if current_user %>
   <p style="color:red"><%= pet.match_pets(current_user) %></p>
 <% end %>

@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_29_183948) do
-
+ActiveRecord::Schema.define(version: 2021_06_05_153513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_05_29_183948) do
     t.boolean "other_pets", default: false
     t.integer "available_time"
     t.boolean "special_needs", default: false
+    t.string "sex", default: "no preference"
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2021_05_29_183948) do
     t.string "first_name"
     t.string "last_name"
     t.string "company_name"
-
+    t.string "nickname"
     t.boolean "garden", default: false
     t.boolean "other_children", default: false
     t.boolean "other_pets", default: false
@@ -104,9 +104,7 @@ ActiveRecord::Schema.define(version: 2021_05_29_183948) do
     t.string "age"
     t.text "description"
     t.string "address"
-
-    t.string "nickname"
-
+    t.string "sex", default: "no preference"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

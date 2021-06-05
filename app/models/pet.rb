@@ -2,7 +2,7 @@ class Pet < ApplicationRecord
   belongs_to :user
   has_many :enquiries
   validates :name, :address, :species, :age, :breed, :description, :status, presence: true
-  validates :description, length: { maximum: 100, too_long: "%{count} characters is the maximum allowed" }
+  validates :description, length: { maximum: 500, too_long: "%{count} characters is the maximum allowed" }
   has_many_attached :photos
 
   def match_pets(user)
