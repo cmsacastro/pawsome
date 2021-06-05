@@ -9,6 +9,7 @@ class AddColumnsToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :age, :string
     add_column :users, :description, :text
     add_column :users, :address, :string
+    add_column :users, :special_needs, :boolean, default: false
   end
 end
 
