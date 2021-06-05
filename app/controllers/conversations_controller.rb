@@ -8,6 +8,7 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @message = Message.new
     @messages = @conversation.messages
+    @messages.last.update(read: true)
   end
 
   def new
@@ -19,11 +20,10 @@ class ConversationsController < ApplicationController
       @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first
     else
       @conversation = Conversation.new(conversation_params)
-      # don't we need to declare the recipient as well??
       @conversation.sender = current_user
       @conversation.save
     end
-    redirect_to conversation_path(@conversation)
+    redirect_to conversations_path(@conversation)
   end
 
   private
