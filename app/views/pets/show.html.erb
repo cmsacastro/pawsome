@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-show.html.erb
-=======
 <div style="margin: 56px;">
   <div>
     <h1>Meet <%= @pet.name %></h1>
@@ -42,9 +39,8 @@ show.html.erb
         <p><%= @pet.address %></p>
         <hr>
       </div>
-      <%= link_to "Find out more about me"%>
+      <!-- I wrote this line -->
+      <%= link_to "Start a conversation", conversations_path(conversation: { recipient_id: @pet.user.id }), method: 'post' %>
     </div>
   </div>
 </div>
-
->>>>>>> d89697356748dc7fd7b9ade3a056342c34ffedb5

@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     # Will raise ActiveModel::ForbiddenAttributesError
   end
 
-
   private
   def user_params
     params.require(:user).permit(:breed, :other_pets, :other_children, :available_time, :garden, :special_needs )
