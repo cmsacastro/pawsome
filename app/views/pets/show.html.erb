@@ -39,8 +39,8 @@
         <p><%= @pet.address %></p>
         <hr>
       </div>
-      <%= link_to "Find out more about me"%>
+      <!-- I wrote this line -->
+      <%= link_to "Start a conversation", conversations_path(conversation: { recipient_id: @pet.user.id }), method: 'post' %>
     </div>
   </div>
 </div>
-

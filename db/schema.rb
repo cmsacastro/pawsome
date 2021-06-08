@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "chatrooms", force: :cascade do |t|
-    t.string "name"
+  create_table "conversations", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,12 +54,13 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string "content"
-    t.bigint "chatroom_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
+    t.bigint "conversation_id"
+    t.text "body"
+    t.boolean "read", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -94,6 +96,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
     t.string "first_name"
     t.string "last_name"
     t.string "company_name"
+    t.string "nickname"
     t.boolean "garden", default: false
     t.boolean "other_children", default: false
     t.boolean "other_pets", default: false
@@ -104,7 +107,6 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
     t.text "description"
     t.string "address"
     t.boolean "special_needs", default: false
-    t.string "nickname"
     t.string "sex", default: "no preference"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -113,6 +115,4 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "enquiries", "pets"
   add_foreign_key "enquiries", "users"
-  add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users"
 end
