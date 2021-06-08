@@ -66,9 +66,9 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
-    t.string "species"
-    t.integer "age"
-    t.string "breed"
+    t.string "species", default: "no preference"
+    t.integer "age", default: 0
+    t.string "breed", default: "no preference"
     t.string "status", default: "available"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
@@ -100,9 +100,9 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
     t.boolean "other_children", default: false
     t.boolean "other_pets", default: false
     t.integer "available_time"
-    t.string "species"
-    t.string "breed"
-    t.string "age"
+    t.string "species", default: "no preference"
+    t.string "breed", default: "no preference"
+    t.integer "age", default: 0
     t.text "description"
     t.string "address"
     t.string "sex", default: "no preference"
