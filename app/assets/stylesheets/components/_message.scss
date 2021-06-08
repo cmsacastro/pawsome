@@ -1,11 +1,39 @@
+.messages-container {
+
+  margin-right: auto;
+  margin-left: auto;
+  width: 700px;
+  margin-left: 200px;
+}
+.message-container {
+  p {
+    font-size: 24px;
+  }
+}
+
 .message-container.new-message p {
   font-weight: bolder;
 }
 
 .message-container.sent {
-background-color: blue;
+  text-align: right;
+  p {
+    span {
+        padding: 8px;
+        background-color: #0195FF;
+        color: white;
+        border-radius: 12px;
+      }
+  }
 }
 
 .message-container.received {
-
+  text-align: left;
+  p {
+      span {
+          padding: 8px;
+          background-color: white;
+          border-radius: 12px;
+        }
+    }
 }

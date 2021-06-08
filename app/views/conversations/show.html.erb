@@ -1,10 +1,13 @@
-<div id="messages" data-conversation-id="<%= @conversation.id %>" data-current-user-id="<%= current_user.id %>">
-  <% @conversation.messages.each do |message| %>
-    <%= render 'messages/message', message: message %>
-  <% end %>
-</div>
+<div class="messages-container">
+  <div id="messages" data-conversation-id="<%= @conversation.id %>" data-current-user-id="<%= current_user.id %>">
+    <% @conversation.messages.each do |message| %>
+      <%= render 'messages/message', message: message %>
+    <% end %>
+  </div>
 
-<%= simple_form_for [ @conversation, @message ] do |f| %>
-  <%= f.input :body, label: false, placeholder: "Type a message..." %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for [ @conversation, @message ] do |f| %>
+    <%= f.input :body, label: false, placeholder: "Type a message..." %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
