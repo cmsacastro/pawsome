@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   
   def index
-    if current_user && current_user.species == "no preference"
+    if current_user && current_user.species != "no preference"
         @pets = Pet.where(species: current_user.species).sort_by{ |pet| -pet.match_pets(current_user) }
     else
       @pets = Pet.all
