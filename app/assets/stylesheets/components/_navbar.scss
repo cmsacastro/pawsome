@@ -1,12 +1,68 @@
-.navbar-lewagon {
+nav {
+  display: flex;
+  height: 120px;
+}
+
+.navbar-transparent {
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  // opacity: 0.8;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 56px;
+  padding-right:32px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+.navbar-white {
+  background: $light-gray;
+  transition: 1s opacity ease;
+  opacity: 0.8;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+#logo {
+  text-align: center;
+  p {
+    color: black;
+  }
+  #logo-image {
+    display:flex;
+    align-items: center;
+    i {
+    font-size: 60px;
+    color: black;
+    padding-right: 24px;
+    }
+
+    .logo_text {
+    text-decoration: none;
+    // font-family: $logo-font;
+    font-size: 40px;
+    color: black;
+    margin: auto;
+    }
+  }
 }
+
+
+#sign-up-section {
+   align-items: center;
+  .sign-up {
+    text-decoration: none;
+    margin: auto;
+    color: black;
+    padding-right: 24px;
+    &:hover{
+      color: $pawsome-pink;
+      transition: 0.2s color ease;
+    }
+  }
+}
+
+
+#logged {
+  text-decoration: none;
+  margin: auto;
+  color: black;
+  padding-right: 24px;
+  }

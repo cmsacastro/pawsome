@@ -1,0 +1,37 @@
+#home-banner {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.6) ), url('https://images.unsplash.com/photo-1560743173-567a3b5658b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  color: #eee;
+  padding-top: 40vh;
+}
+
+#home-button {
+    #pets{
+      text-decoration: none;
+      color: white;
+    }
+    text-align: center;
+    margin-left: 200px;
+    background-color: transparent;
+    margin-top: 24px;
+    width: 120px;
+    border: 1px solid white;
+    padding: 12px 24px 12px 24px;
+    border-radius: 24px;
+    font-weight:bolder;
+    color: transparent;
+    justify-self: left;
+    &:hover{
+      #pets{
+        text-decoration: none;
+        color: white;
+      }
+      color: white;
+      background-color: $pawsome-yellow;
+      opacity: 0.9;
+      transition: 0.3s background-color ease;
+      border: 1px solid $pawsome-yellow;
+    }
+  }
