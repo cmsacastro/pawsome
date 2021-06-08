@@ -8,13 +8,26 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def update
-    current_user.update(user_params)
-    # Will raise ActiveModel::ForbiddenAttributesError
+  def update_preferences
+    @user = current_user
+    if current_user.save!
+      current_user.update(user_params)
+      redirect_to profile_path
+    else
+      render :new
+    end
   end
 
   private
   def user_params
-    params.require(:user).permit(:breed, :other_pets, :other_children, :available_time, :garden, :special_needs )
+    params.require(:user).permit(
+      :breed,
+      :age,
+      :other_pets,
+      :other_children,
+      :available_time,
+      :garden,
+      :special_needs,
+      :species)
   end
 end
