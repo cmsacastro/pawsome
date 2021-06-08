@@ -94,7 +94,6 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
     t.string "first_name"
     t.string "last_name"
     t.string "company_name"
-    t.string "nickname"
     t.boolean "garden", default: false
     t.boolean "other_children", default: false
     t.boolean "other_pets", default: false
@@ -105,6 +104,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_153513) do
     t.text "description"
     t.string "address"
     t.boolean "special_needs", default: false
+    t.string "nickname"
     t.string "sex", default: "no preference"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
