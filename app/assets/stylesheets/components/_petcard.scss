@@ -1,0 +1,35 @@
+#pet-container {
+  margin: 130px;
+}
+
+.pet-card-container {
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  border-radius: 8px 8px 8px 8px;
+  margin-bottom: 10px;
+}
+.pet-card {
+  display: flex;
+}
+
+.img-container img {
+  border-radius: 8px 0 0 0;
+}
+
+.right-card {
+  margin: 12px;
+  padding-left: 12px;
+  padding-top: 12px;
+  padding-right: 12px;
+  margin-bottom: 2px;
+  p {
+    font-size: 10px;
+  }
+}
+
+#matching {
+  bottom: -8px;
+}
+
+
+
+// use me

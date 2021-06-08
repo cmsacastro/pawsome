@@ -1,26 +1,31 @@
-<h1>Can you offer these dogs a loving home? </h1>
+<div id="pet-container">
+  <h1>Can you offer these pets a loving home? </h1>
 
-<div class="container">
-<p><% @pets.each do |pet| %></p>
-<p>-------------------------</p>
-  <%# <% pet.photos.each do |photo| %>
-  
-    <%= cl_image_tag pet.photos.first.key, height: 300, width: 400, crop: :fill %>
-    <%# <%=pet.photos.first.key%>
-  <%# <%end%>
-  
-<% if current_user %>
-  <p style="color:red"><%= pet.match_pets(current_user) %></p>
-<% end %>
-<p><%= pet.address %></p>
-<p><%= pet.name %></p>
-<p><%= pet.breed %></p>
-<p><%= pet.age %></p>
-<p><%= pet.description %></p>
-<p><%= pet.status.capitalize %></p>
-<p>Adoption fee: <%= pet.cost %></p>
-<p><%= pet.user.company_name.presence || pet.user.first_name %> </p>
-<%= link_to "View pet", pet_path(pet.id)%>
-<%end%>
 
+  <% @pets.each do |pet| %>
+    <div class="pet-card-container">
+        <%# <% pet.photos.each do |photo| %>
+      <div class="pet-card">
+        <div class="left-card">
+            <div img-container>
+            <%= cl_image_tag pet.photos.first.key, height: 300, width: 400, crop: :fill %>
+            </div>
+        </div>
+        <div class="right-card">
+          <% if current_user %>
+            <p id="matching" style="color:red"><%= pet.match_pets(current_user) %></p>
+          <% end %>
+            <p><%= pet.address %></p>
+            <p><%= pet.name %></p>
+            <p><%= pet.breed %></p>
+            <p><%= pet.age %></p>
+            <p><%= pet.description %></p>
+            <p><%= pet.status.capitalize %></p>
+            <p>Adoption fee: <%= pet.cost %></p>
+            <p><%= pet.user.company_name.presence || pet.user.first_name %> </p>
+            <%= link_to "View pet", pet_path(pet.id)%>
+        </div>
+      </div>
+    </div>
+    <%end%>
 </div>
