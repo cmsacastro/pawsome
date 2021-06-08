@@ -23,11 +23,11 @@ user_two = User.new(email: "two@example.com", password: "123456", first_name: "J
 user_two.save!
 puts "Battersea Dogs & Cats Home created. They want people to adopt their pets"
 
-dog = Pet.new(name: "Rover", species: "dog", age: 5, breed: "labrador", status: "avaiable", description: "This is a dog. It is worse than a cat", user_id: user_two.id, address: "Battersea SW10", cost: 100)
+dog = Pet.new(name: "Rover", species: "dog", age: 3, breed: "labrador", status: "avaiable", description: "This is a dog. It is worse than a cat", user_id: user_two.id, address: "Battersea SW10", cost: 100)
 dog.save!
 puts "dog created"
 
-cat = Pet.new(name: "Kitty", species: "cat", age: 5, breed: "britsh shorthair", status: "avaiable", description: "This is a cat. It is better than a dog", user_id: user_two.id, address: "Battersea SW10", cost: 50)
+cat = Pet.new(name: "Kitty", species: "cat", age: 1, breed: "britsh shorthair", status: "avaiable", description: "This is a cat. It is better than a dog", user_id: user_two.id, address: "Battersea SW10", cost: 50)
 cat.save!
 puts "cat created"
 
@@ -58,10 +58,11 @@ user_test = User.new(email: "test@example.com",
 user_test.save!
 puts "Seb Saunier created. He wants to adopt a pet"
 
+
 dog_test = Pet.new(
   name: "Test",
   species: "dog",
-  age: 5,
+  age: 4,
   breed: "labrador",
   status: "avaiable",
   description: "This is a dog. It is worse than a cat",
