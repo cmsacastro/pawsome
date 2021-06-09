@@ -13,6 +13,13 @@
 
 .message-container.new-message p {
   font-weight: bolder;
+  text-align: left !important;
+  span {
+          padding: 8px;
+          background-color: white !important;
+          color: black !important;
+          border-radius: 12px;
+        }
 }
 
 .message-container.sent {
@@ -28,12 +35,24 @@
 }
 
 .message-container.received {
+  // TODO: add bg fade
   text-align: left;
   p {
       span {
           padding: 8px;
           background-color: white;
           border-radius: 12px;
+        }
+    }
+}
+
+new-received {
+  text-align: left !important;
+  p {
+      span {
+          padding: 8px !important;
+          background-color: white !important;
+          border-radius: 12px !important;
         }
     }
 }
