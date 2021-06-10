@@ -13,25 +13,26 @@
       color: white;
     }
     text-align: center;
-    margin-left: 200px;
+    margin-left: 390px;
     background-color: transparent;
-    margin-top: 24px;
-    width: 120px;
-    border: 1px solid white;
+    margin-top: 48px;
+    width: 200px;
+    color: white;
     padding: 12px 24px 12px 24px;
     border-radius: 24px;
     font-weight:bolder;
-    color: transparent;
+    background-color: $pawsome-yellow;
     justify-self: left;
+    border: 1px solid $pawsome-yellow;
     &:hover{
       #pets{
         text-decoration: none;
         color: white;
       }
-      color: white;
-      background-color: $pawsome-yellow;
-      opacity: 0.9;
+      border: 1px solid white;
+      color: transparent;
+      background-color: transparent;
       transition: 0.3s background-color ease;
-      border: 1px solid $pawsome-yellow;
+      border: 1px solid white
     }
   }
