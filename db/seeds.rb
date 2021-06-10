@@ -396,7 +396,7 @@ dog17 = Pet.new(
   special_needs: false,
   sex: "male" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpghttps://images.unsplash.com/photo-1582029126941-404e5e8896ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80')
+  file = URI.open('https://images.unsplash.com/photo-1611611158876-41699b77a059?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80')
   dog17.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog17.save!
