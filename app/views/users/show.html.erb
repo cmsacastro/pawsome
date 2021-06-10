@@ -1,5 +1,15 @@
 <h1>I am the user show page</h1>
-<h2>Here are your enquiries</h2>
-<% @enquiries.each do |e| %>
-  <%= e.message %>
-<% end %>
+<h2>Here are your conversations</h2>
+<ul>
+  <% @conversations.each do |c| %>
+    <div class="container border">
+      <!-- TODO: Grab the sender name from the sender_id -->
+      <% if c.messages.last.user_id == current_user.id %>
+        <p><%= link_to "You wrote: #{c.messages.last.body}", conversation_path(c.id) %></p>
+      <% else %>
+      <h4 class="font-weight-bold"><%= "New message"%></h4>
+        <p><%= link_to "#{c.messages.last.user.nickname} wrote: #{c.messages.last.body}", conversation_path(c.id) %></p>
+      <% end %>
+    </div>
+  <% end %>
+</ul>
