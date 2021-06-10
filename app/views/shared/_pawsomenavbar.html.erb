@@ -1,0 +1,46 @@
+<nav class="navbar-transparent fixed-top">
+  <div id="logo">
+    <div id="logo-image">
+      <i class="fas fa-paw"></i>
+      <%= link_to 'Pawsome', root_path, class: "logo_text" %>
+    </div>
+    <p>Simple and Ethical Adoption</p>
+  </div>
+
+      <!-- <div class="form-inline">
+        </%= form_tag pets_path, method: :get do %>
+          </%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a pet" %>
+            </%= button_tag type: 'submit' , class: "btn btn-outline-light" do %>
+              <i class="fas fa-toilet-paper"></i>
+            </% end %>
+        </% end %>
+      </div> -->
+
+  <div id="sign-up-section" style="display:flex">
+    <% if current_user %>
+      <p id="logged">
+        Hello ,  <%= current_user.first_name %>
+      </p>
+      <div class="dropdown mr-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+          <i class="fas fa-align-justify"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <%= link_to 'Dashboard', profile_path, class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <!-- <a class="dropdown-item" href="#">Action</a> -->
+        </div>
+      </div>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-airpnp" %>
+      <% else %>
+      <% end %>
+    <% else %>
+      <%= link_to 'Sign up', new_user_registration_path, class: "sign-up" %>
+      <%= link_to 'Login', new_user_session_path, class: "sign-up" %>
+    <% end %>
+  </div>
+</nav>

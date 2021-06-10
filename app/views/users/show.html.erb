@@ -1,3 +1,4 @@
+
 <h1>I am the user show page</h1>
 <h2>Here are your conversations</h2>
 <ul>
@@ -13,3 +14,11 @@
     </div>
   <% end %>
 </ul>
+<div class="container">
+
+  <h1>Hello <%= current_user.first_name %></h1>
+
+  <%= link_to "Choose your preferences", preference_path, class: "btn btn-primary" %>
+
+</div>
+
