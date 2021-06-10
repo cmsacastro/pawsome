@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = current_user
     if current_user.save!
       current_user.update(user_params)
-      redirect_to profile_path
+      redirect_to pets_path
     else
       render :new
     end
