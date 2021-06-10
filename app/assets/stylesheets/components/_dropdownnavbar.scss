@@ -2,13 +2,13 @@
 .dropdown {
   .btn {
     background: transparent;
-    color: white;
+    color: black;
     border: 0px;
     outline: none;
     border-style: none;
   }
   .btn-secondary.dropdown-toggle {
-    color: white;
+    color: black;
     background-color: transparent;
     border: 0px;
   }
@@ -17,11 +17,11 @@
     border-radius: 8px;
     border: 0px;
     &:hover {
-      background-color: white;
+      background-color: black;
     }
   }
   .btn-secondary:focus {
-    color: white;
+    color: black;
     background-color: transparent;
     border: 0px;
   }

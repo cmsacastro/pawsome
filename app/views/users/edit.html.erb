@@ -1,11 +1,16 @@
-<div>
+<div style="margin-top: 120px;">
   <%= simple_form_for(@user , url: update_preferences_path, :method => :get) do |f| %>
     <%= f.input :address, label: "Location:"%>
-    <%= f.input :species, label: "I'am interested in:", collection: ["cat", "dog", "rodent", "no preference"],
+    <%= f.input :species, label: "I'am interested in:", collection: ["cat", "dog", "rodent", 'no preference'],
                   as: :radio_buttons,
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item' %>
-    <%= f.input :breed, label: "Prefered Breed", collection: Pet::CATBREED, disabled: true %>
+    <%= f.input :sex, label: "I prefer:", collection: ["male", "female", 'no preference'],
+                  as: :radio_buttons,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+    <%= f.input :breed, label: "Prefered Cat Breed", collection: Pet::CATBREED %>
+    <%= f.input :breed, label: "Prefered Dog Breed", collection: Pet::DOGBREED %>
     <%= f.input :age, label: "Do you have a prefered age?", :collection => [['Puppy', 1], ['1-7', 2], ['7-12', 3], ['+12', 4], ['no preference', 0]],
                   as: :radio_buttons,
                   input_html: { class: "tag-selector" },

@@ -8,12 +8,12 @@
       <div class="pet-card">
         <div class="left-card">
             <div img-container>
-            <%= cl_image_tag pet.photos.first.key, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag pet.photos.first.key, height: 350, width: 350, crop: :fill, :class=> 'img-container'%>
             </div>
         </div>
         <div class="right-card">
           <% if current_user %>
-            <p id="matching" style="color:red"><%= pet.match_pets(current_user) %></p>
+            <p id="matching" style="color:#ea907a; font-weight: bold;"><%= pet.match_pets(current_user) %>%</p>
           <% end %>
             <p><%= pet.address %></p>
             <p><%= pet.name %></p>
@@ -23,7 +23,7 @@
             <p><%= pet.status.capitalize %></p>
             <p>Adoption fee: <%= pet.cost %></p>
             <p><%= pet.user.company_name.presence || pet.user.first_name %> </p>
-            <%= link_to "View pet", pet_path(pet.id)%>
+            <%= link_to "View pet", pet_path(pet.id), :style=>'text-decoration: none; color:#ea907a'%>
         </div>
       </div>
     </div>
