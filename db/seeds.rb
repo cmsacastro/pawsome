@@ -145,7 +145,7 @@ dog5 = Pet.new(
   special_needs: false,
   sex: "female" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=403&q=80')
   dog5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog5.save!
@@ -168,7 +168,7 @@ dog6 = Pet.new(
   special_needs: false,
   sex: "male" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1537204696486-967f1b7198c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80')
   dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog6.save!
@@ -191,7 +191,7 @@ dog7 = Pet.new(
   special_needs: true,
   sex: "female" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1532275522382-fc0742e109d9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')
   dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog7.save!
@@ -214,7 +214,7 @@ dog8 = Pet.new(
   special_needs: false,
   sex: "male" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1597513942294-f7e2cc5986d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
   dog8.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog8.save!
@@ -237,7 +237,7 @@ dog9 = Pet.new(
   special_needs: false,
   sex: "male" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1553698217-934b000f1f00?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80')
   dog9.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog9.save!
@@ -260,7 +260,7 @@ dog10 = Pet.new(
   special_needs: false,
   sex: "female" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1443806798002-651c462956ff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80')
   dog10.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog10.save!
@@ -283,7 +283,7 @@ dog11 = Pet.new(
   special_needs: false,
   sex: "male" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1561905887-3461f30ee843?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
   dog11.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog11.save!
@@ -306,7 +306,7 @@ dog12 = Pet.new(
   special_needs: false,
   sex: "female" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1478991031579-5f22c0ee9c9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
   dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog12.save!
@@ -328,7 +328,7 @@ dog13 = Pet.new(
   available_time: 5,
   special_needs: false )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1615261025210-0d1762137b42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=891&q=80')
   dog13.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog13.save!
@@ -350,7 +350,7 @@ dog14 = Pet.new(
   available_time: 3,
   special_needs: false )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1576710770695-3ee4ca928582?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80')
   dog14.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog14.save!
@@ -373,7 +373,7 @@ dog16 = Pet.new(
   special_needs: false,
   sex: "male" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1608399404171-1921a0398c7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80')
   dog16.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog16.save!
@@ -382,13 +382,13 @@ puts "dog created"
 dog17 = Pet.new(
   name: "Ezra", 
   species: "dog", 
-  age: 3, 
+  age: 8, 
   breed: "Bulldog", 
   status: "avaiable", 
-  description: "This gorgeous but insecure American Bulldog is looking for a family who will help him settle into his new home at his own pace. Once Ezra has come around, he has shown to be very loving dog and will be a delight in the home.", 
+  description: "This gorgeous but insecure Bulldog is looking for a family who will help him settle into his new home at his own pace. Once Ezra has come around, he has shown to be very loving dog and will be a delight in the home.", 
   user_id: user_two.id, 
   address: user_two.address, 
-  cost: 700, 
+  cost: 100, 
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -396,7 +396,7 @@ dog17 = Pet.new(
   special_needs: false,
   sex: "male" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpghttps://images.unsplash.com/photo-1582029126941-404e5e8896ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80')
   dog17.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog17.save!
@@ -419,7 +419,7 @@ dog18 = Pet.new(
   special_needs: false,
   sex: "female" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1528797744628-e3f7a01cf485?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
   dog18.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
   dog18.save!
@@ -442,7 +442,7 @@ dog19 = Pet.new(
   special_needs: false,
   sex: "female" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1515415912532-e9d60b5b9f0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80')
   dog19.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog19.save!
