@@ -453,10 +453,9 @@ dog19.save!
 puts "dog created"
 
 cat = Pet.new(name: "Kitty", species: "cat", age: 5, breed: "britsh shorthair", status: "avaiable", description: "This is a cat. It is better than a dog", user_id: user_two.id, address: "Battersea SW10", cost: 50)
-file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631518/d4drj4ern6mjxfin05cqxsegw1mc.jpg')
+file = URI.open('https://images.unsplash.com/photo-1575964479874-9711db881a4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80')
 cat.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
-file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1622631523/q5x6go05uv8e2giksiy2ql6slwuw.jpg')
-cat.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+
 cat.save!
 puts "cat created"
 
