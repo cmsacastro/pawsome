@@ -18,9 +18,11 @@ const initChatroomCable = () => {
         const messages = messagesContainer.querySelectorAll(".message-container");
         // querySelector allows you to apply classList
         const lastMessage = messages[messages.length - 1];
+        const navbar = document.getElementById("messages-link")
 
         if (senderId !== currentUserId) {
           lastMessage.classList.add("new-message");
+          console.log(senderId, currentUserId);
         };
       },
     });

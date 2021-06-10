@@ -8,7 +8,8 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @message = Message.new
     @messages = @conversation.messages
-    @messages.last.update(read: true)
+    # & is a safe operator. Only call last if last exists. Use in external APIs normally
+    @messages&.last&.update(read: true)
   end
 
   def new
@@ -16,6 +17,7 @@ class ConversationsController < ApplicationController
   end
 
   def create
+    # TODO: refactor this (remove the 'if')
     if Conversation.between(params[:sender_id], params[:recipient_id]).present?
       @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first
     else
@@ -23,7 +25,8 @@ class ConversationsController < ApplicationController
       @conversation.sender = current_user
       @conversation.save
     end
-    redirect_to conversations_path(@conversation)
+    # This used to be conversations_path
+    redirect_to conversation_path(@conversation)
   end
 
   private

@@ -39,8 +39,11 @@
         <p><%= @pet.address %></p>
         <hr>
       </div>
-      <!-- I wrote this line -->
-      <%= link_to "Start a conversation", conversations_path(conversation: { recipient_id: @pet.user.id }), method: 'post' %>
+      <!-- for post request, use simple form for. We WERE using wrong params -->
+       <%= simple_form_for Conversation.new do |f| %>
+        <%= f.hidden_field :recipient_id, value: @pet.user.id %>
+        <%= f.submit "Start a conversation" %>
+       <% end %>
     </div>
   </div>
 </div>

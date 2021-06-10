@@ -24,6 +24,10 @@ user_two = User.new(email: "two@example.com", password: "123456", first_name: "J
 user_two.save!
 puts "Battersea Dogs & Cats Home created. They want people to adopt their pets"
 
+user_three = User.new(email: "three@example.com", password: "123456", first_name: "Sally", last_name: "Fields", company_name: "", nickname: "Johnny", address:"16a Griffiths Road, London SW19 1SP")
+user_three.save!
+puts "Sally Fields created. She wants to make enquiries"
+
 dog = Pet.new(
   name: "Rocco", 
   species: "dog", 

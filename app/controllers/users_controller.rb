@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @enquiries = Enquiry.all
+    @conversations = Conversation.where(sender: current_user).or(Conversation.where(recipient: current_user))
   end
 
   # enquires on my pets is current_user.pets.enquiries
