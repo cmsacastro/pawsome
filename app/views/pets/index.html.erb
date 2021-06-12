@@ -3,7 +3,7 @@
 
 
   <% @pets.each do |pet| %>
-    <div class="pet-card-container">
+    <div class="pet-card-container" data-aos="fade-up-right">
         <%# <% pet.photos.each do |photo| %>
       <div class="pet-card">
         <div class="left-card">
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="right-card">
-          <% if current_user %>
+          <% if current_user && current_user.species != "no preference" %>
             <p id="matching" style="color:#ea907a; font-weight: bold;"><%= pet.match_pets(current_user) %>%</p>
           <% end %>
             <p><%= pet.address %></p>

@@ -7,15 +7,15 @@ class Pet < ApplicationRecord
 
   def match_pets(user)
     matching = 0
-    points = 45
-    matching += 10 if self.breed == user.breed
-    matching += 7 if self.sex == user.sex
-    matching += 6 if self.special_needs == user.special_needs
-    matching += 10 if self.age == user.age
-    matching += 5 if self.garden == user.garden
-    matching += 3 if self.other_pets == user.other_pets
-    matching += 3 if self.other_children == user.other_children
-    matching += 1 if self.available_time == user.available_time
+    points = 30
+    matching += 6 if self.breed == user.breed || user.breed == "no preference"
+    matching += 6 if self.sex == user.sex || user.sex == "no preference"
+    matching += 3 if self.special_needs == user.special_needs
+    matching += 5 if self.age == user.age || user.age == 0
+    matching += 4 if self.garden == user.garden || self.garden == false
+    matching += 2 if self.other_pets == user.other_pets || self.other_pets == true
+    matching += 2 if self.other_children == user.other_children || self.other_pets == true
+    matching += 2 if self.available_time == user.available_time
     matching_percentage = matching.to_f / points * 100
     matching_percentage.to_i
   end
