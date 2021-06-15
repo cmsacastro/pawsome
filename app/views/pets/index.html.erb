@@ -7,9 +7,7 @@
         <%= link_to pet_path(pet.id) do %>
           <div class="pet-card">
             <div class="left-card">
-                <div img-container>
-                <%= cl_image_tag pet.photos.first.key, height: 230, width: 280, crop: :fill, :class=> 'img-container'%>
-                </div>
+              <%= cl_image_tag pet.photos.first.key, height: 230, width: 280, crop: :fill, :class=> 'img-container'%>
             </div>
             <div class="right-card">
               <div style="display:flex; justify-content:space-between; margin-top: 8px;" >
@@ -24,31 +22,28 @@
                   <% end %>
                 </div>
               </div>
-                <p style="font-size: 24px; margin-bottom: 0px;"><%= pet.name %></p>
-                <p style="font-size: 12px; font-weight: bolder; margin-bottom: 0px;"><%= pet.breed %></p>
-                <p style="font-size: 11px; font-weight: lighter; padding-bottom: 6px;"><%= pet.age %> years old</p>
-                <p style="font-size: 10px; font-weight: lighter; font-style: italic; padding-bottom: 12px;"><%= pet.description.slice(0, 100)%>...</p>
-                <div style="float: right;">
-                  <p style="font-size: 10px; font-weight: lighter;">Adoption fee:</p>
-                  <p style="font-size: 12px; font-weight: bolder; text-align: right;">£<%= pet.cost %></p>
-                </div>
-
-                <%#= link_to "View pet", pet_path(pet.id), :style=>'text-decoration: none; color:#ea907a'%>
+              <p style="font-size: 24px; margin-bottom: 0px;"><%= pet.name %></p>
+              <p style="font-size: 12px; font-weight: bolder; margin-bottom: 0px;"><%= pet.breed %></p>
+              <p style="font-size: 11px; font-weight: lighter; padding-bottom: 6px;"><%= pet.age %> years old</p>
+              <p style="font-size: 10px; font-weight: lighter; font-style: italic; padding-bottom: 12px;"><%= pet.description.slice(0, 100)%>...</p>
+              <div style="float: right;">
+                <p style="font-size: 10px; font-weight: lighter;">Adoption fee:</p>
+                <p style="font-size: 12px; font-weight: bolder; text-align: right;">£<%= pet.cost %></p>
+              </div>
             </div>
           </div>
         <% end %>
       </div>
-      <%end%>
+    <% end %>
   </div>
   <div style=" width: 500px;">
     <div>
       <%= render 'users/edit' %>
     </div>
     <div id="map"
-         style=" margin: 24px; width: 100%;
+         style=" margin: 0px 24px 24px 24px; width: 100%;
          position: sticky; top: 100px;
-         height: 550px; box-shadow: 0 0 10px rgba(0,0,0,0.15); b
-         order-radius: 8px 8px 8px 8px;"
+         height: 550px; box-shadow: 0 0 10px rgba(0,0,0,0.15);"
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
