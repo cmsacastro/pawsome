@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :breed,
       :age,
+      :sex,
       :other_pets,
       :other_children,
       :available_time,
