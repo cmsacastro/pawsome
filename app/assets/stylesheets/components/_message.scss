@@ -1,13 +1,23 @@
-h1{
-  font-size: 26px;
+.body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.messages-container {
 
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #ffffff;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+  width: 700px;
+  min-height: 700px;
+  margin-top: 150px;
   margin-right: auto;
   margin-left: auto;
-  width: 700px;
-  margin-left: 200px;
+  padding: 24px;
 }
 .message-container {
   p {
@@ -28,9 +38,10 @@ h1{
 
 .message-container.sent {
   text-align: right;
+  align-items: stretch;
   p {
     span {
-        padding: 8px;
+        padding: 8px 4px 8px 8px;
         background-color: #0195FF;
         color: white;
         border-radius: 12px;
