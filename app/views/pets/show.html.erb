@@ -143,11 +143,9 @@
         <hr>
       </div>
       <!-- for post request, use simple form for. We WERE using wrong params -->
-      <% unless current_user.id == @pet.user_id %>
-        <%= simple_form_for Conversation.new do |f| %>
-          <%= f.hidden_field :recipient_id, value: @pet.user.id %>
-          <%= f.submit "Chat with #{@pet.user.company_name}" %>
-        <% end %>
+      <%= simple_form_for Conversation.new do |f| %>
+        <%= f.hidden_field :recipient_id, value: @pet.user.id %>
+        <%= f.submit "Chat with #{@pet.user.company_name}" %>
       <% end %>
     </div>
   </div>
