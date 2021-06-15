@@ -1,0 +1,58 @@
+<% if current_user %>
+  <div class="preferences">
+    <div style="display:flex; justify-content:space-between;">
+      <h3 style="font-size: 14px; font-weight: bolder; padding-bottom: 12px">Filter by...</h3>
+      <i class="fas fa-arrow-down" data-toggle="collapse" data-target="#demo" style="padding-top: 4px; font-size: 14px;"></i>
+     <!--  <button data-toggle="collapse" data-target="#demo">
+        <i class="fas fa-arrow-down"></i>
+      </button> -->
+    </div>
+
+    <div id="demo" class="collapse">
+      <%= simple_form_for(@user , url: update_preferences_path, :method => :get) do |f| %>
+        <%#= f.input :address, label: "Location:"%>
+        <%= f.input :species,label: "", collection: ["cat", "dog", "rodent", 'no preference'],
+                      as: :radio_buttons,
+                      input_html: { class: "tag-selector" },
+                      item_wrapper_class: 'tag-item' %>
+        <%#= f.input :breed, label: "Prefered Dog Breed", collection: Pet::DOGBREED %>
+        <%= f.input :sex, label: "", collection: ["male", "female", 'no preference'],
+                      as: :radio_buttons,
+                      input_html: { class: "tag-selector" },
+                      item_wrapper_class: 'tag-item' %>
+        <%#= f.input :breed, label: "Prefered Cat Breed", collection: Pet::CATBREED %>
+        <hr style="margin-top:12px; margin-bottom:12px;">
+        <%= f.input :age, label: "Do you have a prefered age?", :collection => [['Puppy', 1], ['1-7', 2], ['7-12', 3], ['+12', 4], ['no preference', 0]],
+                      as: :radio_buttons,
+                      input_html: { class: "tag-selector" },
+                      item_wrapper_class: 'tag-item' %>
+        <%= f.input :available_time, label: "How many hours are you away each day?", :collection => [['0-3', 1], ['3-6', 2], ['6-10', 3], ['+10', 4]],
+                      as: :radio_buttons,
+                      input_html: { class: "tag-selector" },
+                      item_wrapper_class: 'tag-item' %>
+        <hr style="margin-top:12px; margin-bottom:12px;">
+        <div style="display: flex; flex-wrap: wrap">
+          <%= f.input :garden, label: "", :collection => [['Garden', true], ["No Garden", false]],
+                        as: :radio_buttons,
+                        input_html: { class: "tag-selector" },
+                        item_wrapper_class: 'tag-item' %>
+          <%= f.input :other_pets, label: "", :collection => [['Have other pets', true], ["Don't have other pets", false]],
+                        as: :radio_buttons,
+                        input_html: { class: "tag-selector" },
+                        item_wrapper_class: 'tag-item' %>
+          <%= f.input :other_children, label: "", :collection => [['Have children', true], ["Don't have children", false]],
+                        as: :radio_buttons,
+                        input_html: { class: "tag-selector" },
+                        item_wrapper_class: 'tag-item' %>
+          <%= f.input :special_needs, label: "", :collection => [["Interested pet with special needs", true], ["Not interested in pets with special needs", false]],
+                        as: :radio_buttons,
+                        input_html: { class: "tag-selector" },
+                        item_wrapper_class: 'tag-item' %>
+        </div>
+    </div>
+      <hr>
+      <%= f.submit "Apply" %>
+    <% end %>
+  </div>
+
+<% end %>

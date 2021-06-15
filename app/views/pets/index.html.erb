@@ -1,31 +1,56 @@
-<div id="pet-container">
-  <h1>Can you offer these pets a loving home? </h1>
-
-
-  <% @pets.each do |pet| %>
-    <div class="pet-card-container" data-aos="fade-up-right">
-        <%# <% pet.photos.each do |photo| %>
-      <div class="pet-card">
-        <div class="left-card">
-            <div img-container>
-            <%= cl_image_tag pet.photos.first.key, height: 350, width: 350, crop: :fill, :class=> 'img-container'%>
+<div id="main-container">
+  <div id="pet-container">
+    <h1>Can you offer these pets a loving home? </h1>
+    <% @pets.each do |pet| %>
+      <hr>
+      <div class="pet-card-container" data-aos="fade-up">
+        <%= link_to pet_path(pet.id) do %>
+          <div class="pet-card">
+            <div class="left-card">
+                <div img-container>
+                <%= cl_image_tag pet.photos.first.key, height: 230, width: 280, crop: :fill, :class=> 'img-container'%>
+                </div>
             </div>
-        </div>
-        <div class="right-card">
-          <% if current_user && current_user.species != "no preference" %>
-            <p id="matching" style="color:#ea907a; font-weight: bold;"><%= pet.match_pets(current_user) %>%</p>
-          <% end %>
-            <p><%= pet.address %></p>
-            <p><%= pet.name %></p>
-            <p><%= pet.breed %></p>
-            <p><%= pet.age %></p>
-            <p><%= pet.description %></p>
-            <p><%= pet.status.capitalize %></p>
-            <p>Adoption fee: <%= pet.cost %></p>
-            <p><%= pet.user.company_name.presence || pet.user.first_name %> </p>
-            <%= link_to "View pet", pet_path(pet.id), :style=>'text-decoration: none; color:#ea907a'%>
-        </div>
+            <div class="right-card">
+              <div style="display:flex; justify-content:space-between; margin-top: 8px;" >
+                <div>
+                  <p style="font-size: 12px;"><%= pet.user.company_name.presence || pet.user.first_name %></p>
+                  <p style="font-size: 10px; font-weight: lighter; color: grey; padding-bottom: 8px;"><%= pet.user.address %></p>
+                </div>
+                <div>
+                  <% if current_user && current_user.species != "no preference" %>
+                    <p style="font-size: 10px; font-weight: lighter; color: grey; margin-bottom: 0px;">Matching:</p>
+                    <p id="matching"><%= pet.match_pets(current_user) %>%</p>
+                  <% end %>
+                </div>
+              </div>
+                <p style="font-size: 24px; margin-bottom: 0px;"><%= pet.name %></p>
+                <p style="font-size: 12px; font-weight: bolder; margin-bottom: 0px;"><%= pet.breed %></p>
+                <p style="font-size: 11px; font-weight: lighter; padding-bottom: 6px;"><%= pet.age %> years old</p>
+                <p style="font-size: 10px; font-weight: lighter; font-style: italic; padding-bottom: 12px;"><%= pet.description.slice(0, 100)%>...</p>
+                <div style="float: right;">
+                  <p style="font-size: 10px; font-weight: lighter;">Adoption fee:</p>
+                  <p style="font-size: 12px; font-weight: bolder; text-align: right;">£<%= pet.cost %></p>
+                </div>
+
+                <%#= link_to "View pet", pet_path(pet.id), :style=>'text-decoration: none; color:#ea907a'%>
+            </div>
+          </div>
+        <% end %>
       </div>
+      <%end%>
+  </div>
+  <div style=" width: 500px;">
+    <div>
+      <%= render 'users/edit' %>
     </div>
-    <%end%>
+    <div id="map"
+         style=" margin: 24px; width: 100%;
+         position: sticky; top: 100px;
+         height: 550px; box-shadow: 0 0 10px rgba(0,0,0,0.15); b
+         order-radius: 8px 8px 8px 8px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>
