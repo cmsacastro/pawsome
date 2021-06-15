@@ -1,7 +1,7 @@
 <div class="body-container">
   <div class="messages-container">
     <div id="messages" data-conversation-id="<%= @conversation.id %>" data-current-user-id="<%= current_user.id %>">
-      <% @conversation.messages.each do |message| %>
+      <% @messages.each do |message| %>
         <%= render 'messages/message', message: message %>
       <% end %>
     </div>
