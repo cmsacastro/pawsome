@@ -6,11 +6,11 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find(params[:id])
-    # @conversation.messages.where.not(user: current_user).update_all(read: true)
+    @conversation.messages.where.not(user: current_user).update_all(read: true)
     @message = Message.new
     @messages = @conversation.messages
     # & is a safe operator. Only call last if last exists. Use in external APIs normally
-    @messages&.last&.update(read: true) unless @messages.last.user == current_user
+    # @messages&.last&.update(read: true) unless @messages.last.user == current_user
     # @messages = @conversation.messages.order(id: :desc)
   end
 
