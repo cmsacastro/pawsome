@@ -2,11 +2,68 @@
   <div>
     <h1>Meet <%= @pet.name %></h1>
   </div>
-  <div>
-    <% @pet.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <%end%>
+</div>
+
+ 
+ <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" >
+
+    <!--Controls-->
+    <div class="controls-top ">
+      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+    </div>
+    <!--/.Controls-->
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+      <li data-target="#multi-item-example" data-slide-to="1"></li>
+      <li data-target="#multi-item-example" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <div class="carousel-inner" role="listbox">
+
+      <% slice = @pet.photos.each_slice(3).to_a %>
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path slice.first.first.key %>')">
+            </div>
+          </div>
+          <% slice.first[1..-1].each do |photo| %> 
+            <div class="col-md-4 clearfix d-none d-md-block"> 
+              <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path photo.key %>')">
+              </div>
+            </div>
+          <%end%>
+        </div>
+      </div>
+      <% slice[1..-1].each do |min_slice| %>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path min_slice.first.key %>')">
+              </div>
+            </div>
+          <% min_slice[1..-1].each do |photo| %> 
+            <div class="col-md-4 clearfix d-none d-md-block"> 
+             <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path photo.key %>')">
+              </div>
+            </div>
+          <%end%>   
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <!--/.Slides-->
   </div>
+ 
+
+  <%# <div>
+    <% @pet.photos.each do |photo| %>
+      <%# <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <%# <%end%>
+  <%# </div> %>
   <div style="display: flex; justify-content: space-between;">
     <div>
     <br>

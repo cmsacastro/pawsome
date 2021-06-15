@@ -42,8 +42,25 @@
   text-align: right;
 }
 
+
+.pet_image {
+  height: 700px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.controls-top {
+  margin: 100px;
+  
+  a {
+    color: green;
+  }
+}
+
 a:-webkit-any-link {
   text-decoration: none;
 }
+
 
 // use me
