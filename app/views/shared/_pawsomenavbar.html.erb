@@ -22,6 +22,7 @@
   <div id="sign-up-section" style="display:flex">
     <% if current_user %>
       <p id="logged">
+        <%= current_user.unread_messages %>
         Hello ,  <%= current_user.first_name %>
       </p>
       <div class="dropdown mr-3">

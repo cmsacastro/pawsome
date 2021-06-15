@@ -1,8 +1,15 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :sent_conversations, class_name: "Conversation", foreign_key: :sender_id
+  has_many :sent_conversation_messages, through: :sent_conversations, source: :messages
+
+  has_many :received_conversations, class_name: "Conversation", foreign_key: :recipient_id
+  has_many :received_conversation_messages, through: :received_conversations, source: :messages
+
   has_many :pets
   has_many :enquiries
   has_one_attached :photo
@@ -124,4 +131,8 @@ class User < ApplicationRecord
     "Weimaraner",
     "Welsh terrier",
     "Yorkshire terrier"]
+
+  def unread_messages
+    sent_conversation_messages.where.not(user: self, read: true).count + received_conversation_messages.where.not(user: self, read: true).count
+  end
 end
