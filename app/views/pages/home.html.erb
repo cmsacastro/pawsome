@@ -1,6 +1,12 @@
 <div id="home-banner">
-  <h1 style="color:white; margin-left: 48px; width: 600px;">Are you looking to <strong>adopt a pet</strong> but don't know where to start?</h1>
+  <h1 style="color:white; margin-left: 48px; width: 480px;">Are you looking to <strong>adopt a pet . . .</strong> but don't know where to start?</h1>
   <div id="home-button">
     <%= link_to "Visit us", pets_path, id: "pets"%>
   </div>
+  <video autoplay muted loop id="myVideo">
+    <source src="https://res.cloudinary.com/dk4ojzhp0/video/upload/v1623771318/production_ID_4504643_igncoj.mp4" type="video/mp4">
+  </video>
+</div>
+<div>
+  <%= render 'shared/carousel' %>
 </div>

@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  height: 130px;
+  height: 100px;
 }
 
 .navbar-transparent {
@@ -20,22 +20,22 @@ nav {
 
 #logo-set {
   background-image: url('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623423528/PAW_jaq0mh.png');
-  background-size: 130px;
+  background-size: 100px;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 #logo {
   text-align: center;
-  padding-top: 12px;
+  padding-top: 6px;
   p {
     color: $pawsome-darkgrey;
-    font-size: 12px;
+    font-size: 11px;
   }
   .logo_text {
     text-decoration: none;
     font-family: $logo-font;
-    font-size: 40px;
+    font-size: 36px;
     color: $pawsome-darkgrey;
     margin: auto;
   }
@@ -47,10 +47,11 @@ nav {
   .sign-up {
     text-decoration: none;
     margin: auto;
-    color: $pawsome-darkgrey;
+    color: black;
     padding-right: 24px;
+    font-size: 14px;
     &:hover{
-      color: $pawsome-pink;
+      color: $pawsome-yellow ;
       transition: 0.2s color ease;
     }
   }
@@ -62,4 +63,5 @@ nav {
   margin: auto;
   color: black;
   padding-right: 24px;
+  font-size: 14px;
   }

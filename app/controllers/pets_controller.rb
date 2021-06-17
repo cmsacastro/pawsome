@@ -7,6 +7,15 @@ class PetsController < ApplicationController
     else
       @pets = Pet.all
     end
+    @user = current_user
+    @users = User.all
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user })
+      }
+    end
   end
 
   def show
@@ -23,7 +32,7 @@ class PetsController < ApplicationController
 
 private
   def pet_params
-    params.require(:pet).permit(:name, :species, :age, :breed, :description, :address, :cost, photos: [])
+    params.require(:pet).permit(:name, :species, :age, :sex, :breed, :description, :address, :cost, photos: [])
   end
 
 end

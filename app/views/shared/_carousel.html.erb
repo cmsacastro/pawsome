@@ -1,0 +1,81 @@
+<div class="slider-container">
+  <h1>Top Picks</h1>
+  <div class="controls">
+    <button class="prev">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+     <button class="next">
+      <i class="fas fa-chevron-right">  </i>
+    </button>
+  </div>
+  <div class="my-slider">
+    <div class="slider-item">
+      <div class="card">
+        <h2>Hello</h2>
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="card">
+        <h2>Hello</h2>
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="card">
+        <h2>Hello</h2>
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="card">
+        <h2>Hello</h2>
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="card">
+        <h2>Hello</h2>
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="card">
+        <h2>Hello</h2>
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="card">
+        <h2>Hello</h2>
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="card">
+        <h2>Hello</h2>
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="card">
+        <h2>Hello</h2>
+      </div>
+    </div>
+  </div>
+  <div class="dots" style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+  <script>
+    const slider = tns({
+       container: '.my-slider',
+        items: 3,
+        gutter: 10,
+        swipeAngle: false,
+        speed: 400,
+        controlsContainer: '.controls',
+        prevButton: '.prev',
+        nextButton: '.next',
+        navContainer: '.dots',
+     });
+  </script>
+</div>
+
+
+

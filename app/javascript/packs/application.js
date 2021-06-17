@@ -29,9 +29,11 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { initUpdateNavbarOnScroll } from './components/navbar';
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initChatroomCable();
   initUpdateNavbarOnScroll();
+  initMapbox();
 });

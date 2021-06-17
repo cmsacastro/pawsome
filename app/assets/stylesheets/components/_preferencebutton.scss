@@ -1,3 +1,23 @@
+.preferences {
+  position: sticky;
+  z-index: 1;
+  top: 140px;
+  margin: 0px 0px 24px 24px;
+  padding: 18px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  border-radius: 8px 8px 8px 8px;
+  width: 100%;
+}
+
+legend.col-form-label.pt-0 {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+label.select.optional {
+  font-size: 12px;
+  font-weight: lighter;
+}
 .tag-item {
   display: inline-block;
 }
@@ -12,22 +32,53 @@
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  height: 80px;
-  width: 80px;
+  height: 30px;
   font-size: 0.7rem;
   border-radius: 8px;
-  padding: 0.1rem 0.5rem;
+  padding: 6px 12px 3px 12px;
   background-color: transparent;
   color: black;
-  border: 1px solid $pawsome-pink;
+  border: 1px solid $pawsome-green;
   margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.1rem;
+  font-size: 10px;
 }
 
 .tag-selector:checked + label {
-  background-color: $pawsome-pink;
+  background-color: $pawsome-green;
+  font-weight: bolder;
 }
 
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-  color: black;
+  color: $black;;
+}
+
+input {
+  overflow:auto;
+  background-color: $pawsome-yellow;
+  border: 0px;
+  border-radius: 12px 12px 12px 12px;
+  width: 100%;
+  padding: 8px 24px 8px 24px;
+  font-size: 16px;
+  color: white;
+  font-weight: bolder;
+  align-item: center;
+  align: center;
+  border: 1px solid $pawsome-yellow;
+  &:hover{
+      #pets{
+        text-decoration: none;
+        color: white;
+      }
+      border: 1px solid $pawsome-yellow;
+      color: $pawsome-yellow;
+      background-color: transparent;
+      transition: 0.3s background-color ease;
+      border: 1px solid $pawsome-yellow;
+    }
+}
+
+fieldset.form-group.radio_buttons.optional{
+  margin-bottom: 3px;
 }
