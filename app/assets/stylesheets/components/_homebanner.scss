@@ -6,11 +6,10 @@
   padding-top: 40vh;
 }
 #myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
+  position: absolute;
   width:100%;
   z-index:-1;
+  top: -50px;
 }
 
 #home-button {
