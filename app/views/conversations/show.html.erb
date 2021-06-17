@@ -1,13 +1,14 @@
-<div class="messages-container" style="margin: 120px;">
-  <div id="messages" data-conversation-id="<%= @conversation.id %>" data-current-user-id="<%= current_user.id %>">
-    <% @conversation.messages.each do |message| %>
-      <%= render 'messages/message', message: message %>
+<div class="body-container">
+  <div class="messages-container">
+    <div id="messages" data-conversation-id="<%= @conversation.id %>" data-current-user-id="<%= current_user.id %>">
+      <% @conversation.messages.each do |message| %>
+        <%= render 'messages/message', message: message %>
+      <% end %>
+    </div>
+<!-- TODO: press enter to send functionality -->
+    <%= simple_form_for [ @conversation, @message ] do |f| %>
+      <%= f.input :body, label: false, placeholder: "Type a message..." %>
+      <%= f.submit %>
     <% end %>
   </div>
-
-  <%= simple_form_for [ @conversation, @message ] do |f| %>
-    <%= f.input :body, label: false, placeholder: "Type a message..." %>
-    <%= f.submit %>
-  <% end %>
-
 </div>
