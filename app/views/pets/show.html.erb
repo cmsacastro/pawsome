@@ -1,131 +1,150 @@
-<div style="margin: 120px;">
-  <div>
+<div id="main-container">
+  <div id="pet-image-container">
     <h1>Meet <%= @pet.name %></h1>
-  </div>
-</div>
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" >
 
- 
- <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" >
-
-    <!--Controls-->
-    <div class="controls-top ">
-      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
-    </div>
-    <!--/.Controls-->
-
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-      <li data-target="#multi-item-example" data-slide-to="1"></li>
-      <li data-target="#multi-item-example" data-slide-to="2"></li>
-    </ol>
-    <!--/.Indicators-->
-    <div class="carousel-inner" role="listbox">
-
-      <% slice = @pet.photos.each_slice(3).to_a %>
-      <div class="carousel-item active">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path slice.first.first.key %>')">
-            </div>
-          </div>
-          <% slice.first[1..-1].each do |photo| %> 
-            <div class="col-md-4 clearfix d-none d-md-block"> 
-              <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path photo.key %>')">
-              </div>
-            </div>
-          <%end%>
-        </div>
+      <!--Controls-->
+      <div class="controls-top">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
       </div>
-      <% slice[1..-1].each do |min_slice| %>
-        <div class="carousel-item">
+      <!--/.Controls-->
+
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+        <li data-target="#multi-item-example" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+      <div class="carousel-inner" role="listbox">
+
+        <% slice = @pet.photos.each_slice(3).to_a %>
+        <div class="carousel-item active">
           <div class="row">
             <div class="col-md-4">
-              <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path min_slice.first.key %>')">
+              <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path slice.first.first.key %>')">
               </div>
             </div>
-          <% min_slice[1..-1].each do |photo| %> 
-            <div class="col-md-4 clearfix d-none d-md-block"> 
-             <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path photo.key %>')">
+            <% slice.first[1..-1].each do |photo| %> 
+              <div class="col-md-4 clearfix d-none d-md-block"> 
+                <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path photo.key %>')">
+                </div>
               </div>
-            </div>
-          <%end%>   
+            <%end%>
           </div>
         </div>
-      <% end %>
-    </div>
-    <!--/.Slides-->
-  </div>
- 
-
-  <%# <div>
-    <% @pet.photos.each do |photo| %>
-      <%# <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <%# <%end%>
-  <%# </div> %>
-  <div style="display: flex; justify-content: space-between;">
-    <div>
-    <br>
-      <h2>About me</h2>
-      <hr>
-      <div>
-        <div>
-        <h4>Breed</h4>
-        <%= @pet.breed %>
-        <h4>Age</h4>
-        <%= @pet.age %>
-        <h4>Status</h4>
-        <%= @pet.status%>
-        <h4>Sex</h4>
-        <%= @pet.sex%>
-        </div>
-        <br>
-        <h4>Important information about me</h4>
-        <% if @pet.garden == true %>
-          <%= "I need a garden" %>
-          <% else %>
-          <%= "I can live in an apartment" %>
-        <%end%>
-        <br><br>
-        <% if @pet.other_children == true %>
-          <%= "I can live with children" %>
-          <% else %>
-          <%= "Sorry I'm not suitable to live with children :(" %>
-        <%end%>
-        <br><br>
-        <% if @pet.other_pets == true %>
-          <%= "I love to live with other pets" %>
-          <% else %>
-          <%= "Im not great with other pets" %>
-        <%end%>
-        <br><br>
-        <% if @pet.special_needs == true %>
-          <%= "I require extra care. Please ask my carer for details" %>
-          <% else %>
-          <%= "I do not require any special care" %>
-        <%end%>
-        <br><br>
-        <% if @pet.available_time == 1 %>
-          <%= "I can be left unattended up to 3 hours per day" %>
-          <% elsif @pet.available_time == 2 %>
-          <%= "I can be left unattended up to 6 hours per day" %>
-          <% elsif @pet.available_time == 3 %>
-          <%= "I can be left unattended up to 10 hours per day" %>
-          <% elsif @pet.available_time == 4 %>
-          <%= "I can be left unattended for more than 10+ hours per day" %>
-        <%end%>
-        <br><br>
-
-
-
+        <% slice[1..-1].each do |min_slice| %>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path min_slice.first.key %>')">
+                </div>
+              </div>
+                <% min_slice[1..-1].each do |photo| %> 
+                  <div class="col-md-4 clearfix d-none d-md-block"> 
+                    <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path photo.key %>')">
+                    </div>
+                  </div>
+                <%end%>   
+              </div>
+            </div>
+        <% end %>
       </div>
+      <!--/.Slides-->
+    </div>
+  
+
+    <%# <div>
+      <% @pet.photos.each do |photo| %>
+        <%# <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%# <%end%>
+    <%# </div> %>
+    <div style="display: flex; justify-content: space-between; col-12 col-lg-8">
       <div>
+      <br>
+        <h2>About me</h2>
         <hr>
-        <h4>Description</h4>
-        <%= @pet.description %>
+        <div>
+          <div>
+            <h4>Breed</h4>
+            <%= @pet.breed %>
+            <h4>Age</h4>
+            <%= @pet.age %>
+            <h4>Status</h4>
+            <%= @pet.status%>
+            <h4>Sex</h4>
+            <%= @pet.sex%>
+          </div>
+          <br>
+          <h4>Important information about me</h4>
+          <% if @pet.garden == true %>
+            <%= "I need a garden" %>
+            <% else %>
+            <%= "I can live in an apartment" %>
+          <%end%>
+          <br><br>
+          <% if @pet.other_children == true %>
+            <%= "I can live with children" %>
+            <% else %>
+            <%= "Sorry I'm not suitable to live with children :(" %>
+          <%end%>
+          <br><br>
+          <% if @pet.other_pets == true %>
+            <%= "I love to live with other pets" %>
+            <% else %>
+            <%= "Im not great with other pets" %>
+          <%end%>
+          <br><br>
+          <% if @pet.special_needs == true %>
+            <%= "I require extra care. Please ask my carer for details" %>
+            <% else %>
+            <%= "I do not require any special care" %>
+          <%end%>
+          <br><br>
+          <% if @pet.available_time == 1 %>
+            <%= "I can be left unattended up to 3 hours per day" %>
+            <% elsif @pet.available_time == 2 %>
+            <%= "I can be left unattended up to 6 hours per day" %>
+            <% elsif @pet.available_time == 3 %>
+            <%= "I can be left unattended up to 10 hours per day" %>
+            <% elsif @pet.available_time == 4 %>
+            <%= "I can be left unattended for more than 10+ hours per day" %>
+          <%end%>
+          <br><br>
+        </div>
+        <div>
+          <hr>
+          <h4>Description</h4>
+          <%= @pet.description %>
+        </div>
+      </div>
+      <div class="pet-info col-12 col-lg-4" >
+          <div>
+            <h4>Adoption Fee</h4>
+            <p>£<%= @pet.cost %></p>
+            <hr>
+          </div>
+          <div>
+            <h4>Adoption Centre</h4>
+            <p><%= @pet.user.company_name %></p>
+            <hr>
+          </div>
+          <div>
+            <h4>Location</h4>
+            <p><%= @pet.address %></p>
+            <hr>
+          </div>
+          <!-- for post request, use simple form for. We WERE using wrong params -->
+          <% unless current_user.id == @pet.user_id %>
+            <%= simple_form_for Conversation.new do |f| %>
+              <%= f.hidden_field :recipient_id, value: @pet.user.id %>
+              <%= f.submit "Chat with #{@pet.user.company_name}" %>
+            <% end %>
+          <% end %> 
       </div>
     </div>
+
     <div>
       <div>
         <h4>Adoption Fee</h4>
@@ -148,5 +167,5 @@
         <%= f.submit "Chat with #{@pet.user.company_name}" %>
       <% end %>
     </div>
-  </div>
-</div>
+  </div>  
+</div> 

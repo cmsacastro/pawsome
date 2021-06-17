@@ -1,0 +1,46 @@
+<div class="slider-container">
+  <h1>Top Picks</h1>
+  <div class="controls">
+    <button class="prev">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+     <button class="next">
+      <i class="fas fa-chevron-right">  </i>
+    </button>
+  </div>
+  <div class="my-slider">
+    <% @selected_pets.each do |pet| %>
+      <div class="slider-item">
+        <div class="card">
+          <%= cl_image_tag pet.photos.first.key, height: 180, crop: :fill, :class=> 'img-container'%>
+          <div class="pet-info">
+            <%= pet.name %>
+            <%=  %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  <div class="dots" style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js">
+    const slider = tns({
+       container: '.my-slider',
+        items: 3,
+        gutter: 10,
+        swipeAngle: false,
+        speed: 400,
+        controlsContainer: '.controls',
+        prevButton: '.prev',
+        nextButton: '.next',
+        navContainer: '.dots',
+     });
+  </script>
+</div>
+
+
+
