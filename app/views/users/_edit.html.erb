@@ -8,8 +8,8 @@
       </button> -->
     </div>
 
-    <div id="demo" class="collapse">
-      <%= simple_form_for(@user , url: update_preferences_path, :method => :get) do |f| %>
+    <%= simple_form_for(@user , url: update_preferences_path, :method => :get) do |f| %>
+      <div id="demo" class="collapse">
         <%#= f.input :address, label: "Location:"%>
         <%= f.input :species,label: "", collection: ["cat", "dog", "rodent", 'no preference'],
                       as: :radio_buttons,
@@ -49,7 +49,7 @@
                         input_html: { class: "tag-selector" },
                         item_wrapper_class: 'tag-item' %>
         </div>
-    </div>
+      </div>
       <hr>
       <%= f.submit "Apply" %>
     <% end %>

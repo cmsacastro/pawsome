@@ -3,6 +3,24 @@ nav {
   height: 100px;
 }
 
+// it's moving, also everything is duplicated in another directory inside pawsome
+.new-notification {
+    height: 15px;
+    width: 15px;
+    // background-color: red;
+    background-image: linear-gradient(to right, #e60000, rgba(255,0,0,1));
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    top:0px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+
+.button {
+  position: relative;
+}
+
 .navbar-transparent {
   justify-content: space-between;
   background: transparent;
@@ -48,7 +66,7 @@ nav {
     text-decoration: none;
     margin: auto;
     color: black;
-    padding-right: 24px;
+    padding-right: 36px;
     font-size: 14px;
     &:hover{
       color: $pawsome-yellow ;
