@@ -72,15 +72,15 @@ dog2 = Pet.new(
   sex: "female"
   )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623182962/q2rzd7k5zbkv2fz8bbdc.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623784113/oxr0ziutpf7vfez1fno7647ngeor.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623183088/uzbx5z9jbvouurvfggq7.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623784014/ju0aq64ytn79uzc7wur2p3a7qtyt.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623183005/uwubptbvd2or4geazdvw.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623783916/vx53wll8egl3xn9hx3v4hkz7bnqn.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623183012/r76dlgfsjvicodb92aoj.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623783356/0yho1ert82dfbb8m2r1i3uq57gbb.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623182991/xparol0slrj7hwenkelv.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623780294/sdlbnsikoft1rhtetfcari6s6w14.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog2.save!
