@@ -144,6 +144,28 @@
           <% end %> 
       </div>
     </div>
+
+    <div>
+      <div>
+        <h4>Adoption Fee</h4>
+        <p>£<%= @pet.cost %></p>
+        <hr>
+      </div>
+      <div>
+        <h4>Adoption Centre</h4>
+        <p><%= @pet.user.company_name %></p>
+        <hr>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <p><%= @pet.address %></p>
+        <hr>
+      </div>
+      <!-- for post request, use simple form for. We WERE using wrong params -->
+      <%= simple_form_for Conversation.new do |f| %>
+        <%= f.hidden_field :recipient_id, value: @pet.user.id %>
+        <%= f.submit "Chat with #{@pet.user.company_name}" %>
+        <% end %>
     </div>
   </div>  
 </div> 

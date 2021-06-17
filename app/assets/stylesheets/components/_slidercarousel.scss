@@ -1,0 +1,77 @@
+.slider-container {
+    margin: 100px 200px 48px 200px;
+    position:relative;
+    h1{
+      text-align:center;
+      font-weight:bolder;
+      padding-bottom:12px;
+      font-size: 24px;
+    }
+
+  .slider-item {
+    display: none;
+    padding:12px;
+  }
+
+  .card{
+    height: 250px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    border-radius: 8px 8px 8px 8px;
+    h2{
+      text-align:center;
+      font-size: 18px;
+    }
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border: 0px;
+    color: $pawsome-green;
+    background-color: transparent;
+    font-size: 24px;
+  }
+
+  .next {
+    right: -60px;
+  }
+
+  .prev {
+    left: -60px;
+  }
+
+  .prev:hover, .next:hover {
+    text-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .dot {
+    background-color: $pawsome-green;
+    opacity: 0.3;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: opacity 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    opacity: 0.6;
+  }
+  .tns-nav-active {
+    opacity: 1;
+    background-color: $pawsome-green;
+  }
+}
+
+#tns1-iw.tns-inner {
+  margin: 0px 0px 0px 0px;
+}
