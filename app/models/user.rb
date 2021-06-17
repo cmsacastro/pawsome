@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_many :received_conversations, class_name: "Conversation", foreign_key: :recipient_id
   has_many :received_conversation_messages, through: :received_conversations, source: :messages
 
+  has_many :favorite_pets
+  has_many :favorites, through: :favorite_pets, source: :pet
+
   has_many :pets
   has_many :enquiries
   has_one_attached :photo
