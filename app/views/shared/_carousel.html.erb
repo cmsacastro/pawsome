@@ -11,11 +11,10 @@
   <div class="my-slider">
     <% @selected_pets.each do |pet| %>
       <div class="slider-item">
-        <div class="card">
-          <%= cl_image_tag pet.photos.first.key, height: 180, crop: :fill, :class=> 'img-container'%>
-          <div class="pet-info">
+        <div class="s-card">
+          <%= cl_image_tag pet.photos.first.key, :class=> 's-img-container'%>
+          <div class="s-pet-info">
             <%= pet.name %>
-            <%=  %>
           </div>
         </div>
       </div>
@@ -27,7 +26,7 @@
     <span class="dot" onclick="currentSlide(3)"></span>
 </div>
 </div>
-<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js">
   </script>
   <script>
     const slider = tns({
@@ -41,7 +40,7 @@
         nextButton: '.next',
         navContainer: '.dots',
     });
-  </script> -->
+  </script>
 </div>
 
 
