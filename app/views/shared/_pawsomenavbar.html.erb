@@ -21,10 +21,12 @@
 
   <div id="sign-up-section" style="display:flex">
     <% if current_user %>
-      <%= link_to 'Profile', profile_path, class: "sign-up" %>
+      <div class="button">
+        <%= link_to 'Profile', profile_path, class: "sign-up" %>
+      <span class= "<%= 'new-notification' if  current_user.unread_messages > 0 %>" ></span>
+      </div>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "sign-up" %>
       <p id="logged">
-        <%= current_user.unread_messages %>
         Hello ,  <%= current_user.first_name %>
       </p>
 
