@@ -1,5 +1,10 @@
 import consumer from "./consumer";
 
+// TODO: Notify the recipient- when (there is a new message && they are NOT in the chatroom.)
+// Can we use the 'else' to this 'if' statement to open the notification channel to recieve popup notifications?
+// Could we also create a dynamic icon on the Messages text on the navbar?
+// Can we use the 'read' behavior of the message to decide whether the notification icon shows up?
+
 const initChatroomCable = () => {
   const messagesContainer = document.getElementById('messages');
   if (messagesContainer) {
