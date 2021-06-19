@@ -14,11 +14,14 @@ class FavoritePetsController < ApplicationController
 
   def create
     @favorite_pet = FavoritePet.new(favorite_pet_params)
-    @user = current_user
+    @favorite_pet.user = current_user
+    @favorite_pet.pet = Pet.find(params[:pet_id])
     if @favorite_pet.save
-      redirect_to user_favorite_pets_path
+      redirect_to profile_path
     else
-      render :new
+      flash.now[:alert] = 'You have already favorited this pet, you egg'
+      @pet = @favorite_pet.pet
+      render "pets/show"
     end
   end
 
@@ -26,6 +29,6 @@ class FavoritePetsController < ApplicationController
 
   def favorite_pet_params
     # param is missing or the value is empty
-    params.require(:favorite_pet).permit(:pet_id)
+    params.permit(:pet)
   end
 end

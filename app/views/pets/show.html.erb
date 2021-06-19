@@ -167,12 +167,8 @@
         <%= f.submit "Chat with #{@pet.user.company_name}" %>
       <% end %>
       <!-- This link_to doesn't work -->
-      <%= link_to "Add to favorites", user_favorite_pets_path(pet_id: @pet.id), method: 'post' %>
-      <!-- This simple_form_for doesn't work either -->
-       <%= simple_form_for FavoritePet.create do |f| %>
-        <%= f.hidden_field :pet_id, value: @pet.id %>
-        <%= f.submit "Add to favorites" %>
-      <% end %>
+      <%= link_to "Add to favorites", pet_favorite_pets_path(@pet), method: 'post' %>
+
 
 
     </div>

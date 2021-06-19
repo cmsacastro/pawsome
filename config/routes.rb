@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   # This might break it (EDIT: it doesn't, but doesn't use the profile url)
   resources :users do
-    resources :favorite_pets
   end
   
   resources :pets do
     resources :enquiries, only: [:new, :create]
+    resources :favorite_pets
   end
 
   resources :conversations, only: [:index, :show, :new, :create] do
