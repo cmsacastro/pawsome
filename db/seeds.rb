@@ -97,9 +97,9 @@ dog2 = Pet.new(
   sex: "female"
   )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623784113/oxr0ziutpf7vfez1fno7647ngeor.jpg')
-  puts"file1"
-  dog2.photos.attach(io: file, filename: 'oxr0ziutpf7vfez1fno7647ngeor.jpg', content_type: 'image/jpg')
+  # file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623784113/oxr0ziutpf7vfez1fno7647ngeor.jpg')
+  # puts"file1"
+  # dog2.photos.attach(io: file, filename: 'oxr0ziutpf7vfez1fno7647ngeor.jpg', content_type: 'image/jpg')
   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623784014/ju0aq64ytn79uzc7wur2p3a7qtyt.jpg')
   puts"file2"
   dog2.photos.attach(io: file, filename: 'ju0aq64ytn79uzc7wur2p3a7qtyt.jpg', content_type: 'image/jpg')
