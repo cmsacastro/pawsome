@@ -1,11 +1,18 @@
-<div class="container" style="margin: 120px 0px 0px 0px; padding: 0px; display:flex; justify-content:space-between;">
+<div class="container" style="margin: 120px 0px 0px 0px; padding: 0px; display:flex; justify-content:flex-start;">
   <div class="profile-banner">
-    <%= cl_image_tag current_user.photos.key, height: 230, width: 280, crop: :fill, :class=> 'profile-image'%>
-    <h2>Hi <%= current_user.first_name %>!</h2>
+    <div class="profile-img">
+      <%= cl_image_tag current_user.photo.key, height: 180, width: 180,  crop: :fill %>
+    </div>
+    <div class="profile-info">
+      <div id="profile-name">
+        <span><%= current_user.first_name %></span>
+        <span><%= current_user.last_name %></span>
+      </div>
+      <p><%= current_user.email %></p>
+      <p><%= current_user.address %></p>
+    </div>
   </div>
-  <div>
-    <%= link_to "Choose your preferences", preference_path, class: "btn btn-primary" %>
-    <h1>I am the user show page</h1>
+  <div class="profile-right">
     <h2>Here are your conversations</h2>
     <ul>
       <% @conversations.each do |c| %>
@@ -20,6 +27,7 @@
         </div>
       <% end %>
     </ul>
+    <hr>
     <div class="container">
       <h1>Your favorite pets</h1>
       <% @favorite_pets.each do |f| %>
