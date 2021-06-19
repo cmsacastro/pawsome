@@ -19,6 +19,12 @@
       </div>
     <% end %>
   </ul>
+  <div class="container">
+    <h1>Your favorite pets</h1>
+    <% @favorite_pets.each do |f| %>
+      <%= f.pet.name %>
+    <% end %>
+  </div>
 </div>
 
 
