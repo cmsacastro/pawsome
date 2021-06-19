@@ -1,5 +1,5 @@
 .slider-container {
-    margin: 100px 200px 48px 200px;
+    margin: 80px 200px 48px 200px;
     position:relative;
     h1{
       text-align:center;
@@ -11,17 +11,42 @@
   .slider-item {
     display: none;
     padding:12px;
-  }
+    &:hover {
+      padding: 4px;
+    }
+    }
 
-  .card{
+  .s-card{
     height: 250px;
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    border-radius: 8px 8px 8px 8px;
-    h2{
-      text-align:center;
-      font-size: 18px;
+    position: relative;
+
+
+    .s-img-container {
+      width: 100%;
+      height:70%;
+      object-fit: cover;
+      z-index:-1;
+    }
+    #s-name {
+      background-color: white;
+      opacity: 0.9;
+      padding: 6px;
+      width: 80px;
+      text-align: center;
+      float: left;
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+    .s-pet-info {
+      padding: 4px 12px 4px 12px ;
+      width: 100%;
     }
   }
+
+
 
   .prev, .next {
     position: absolute;
@@ -75,3 +100,4 @@
 #tns1-iw.tns-inner {
   margin: 0px 0px 0px 0px;
 }
+

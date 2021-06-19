@@ -8,6 +8,11 @@
   
 }
 
+
+a:hover{
+  text-decoration:none;
+}
+
 .linkable {
   text-decoration: none;
 }
@@ -47,17 +52,19 @@
   margin: 100px;
 }
 
+// pet show image carousel
 .pet_image {
-  height: 500px;
+  height: 400px;
   width: 100%;
   background-size: cover;
   background-position: center;
+ 
 }
 
 .controls-top {
-  
   a {
     color: green;
+    margin: 100px 0px 0px 0px;
   }
 }
 
@@ -68,5 +75,40 @@
   border-radius: 8px 8px 8px 8px;
   width: 100%;
   }
+
+  // pet show page important info about me
+  .pet-info-show {
+    margin: 24px 24px 24px 0px;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    border-radius: 8px 8px 8px 8px;
+    width: 100%;
+    margin-right: 24px;
+    }
+    // pet show page right box adoption fee etc
+    .pet-info-show-2 {
+      margin: 70px 0px 24px 24px;
+      padding: 18px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      border-radius: 8px 8px 8px 8px;
+      width: 100%;
+      }    
+  
+      .carousel-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      .carousel-inner {
+        margin: 0 1em;
+      }
+      #pet-show-container{
+        
+        justify-content: space-between;
+        margin: 130px 36px 36px 36px;
+      }
 
 // use me

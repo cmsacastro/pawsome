@@ -1,5 +1,9 @@
 <div class="slider-container">
-  <h1>Top Picks</h1>
+  <% if current_user && current_user.species != "no preference" %>
+    <h1>Top Picks For You</h1>
+  <% else %>
+    <h1>Meet Our Pets</h1>
+  <% end %>
   <div class="controls">
     <button class="prev">
       <i class="fas fa-chevron-left"></i>
@@ -11,11 +15,21 @@
   <div class="my-slider">
     <% @selected_pets.each do |pet| %>
       <div class="slider-item">
-        <div class="card">
-          <%= cl_image_tag pet.photos.first.key, height: 180, crop: :fill, :class=> 'img-container'%>
-          <div class="pet-info">
-            <%= pet.name %>
-            <%=  %>
+        <div class="s-card">
+          <%= link_to pet_path(pet.id) do %>
+            <%= cl_image_tag pet.photos.first.key, :class=> 's-img-container'%>
+          <% end %>
+          <div id="s-name">
+            <%= pet.name%>
+          </div>
+          <div class="s-pet-info">
+            <p style="font-size: 13px; font-weight: bolder; margin-bottom: 0px;"><%= pet.breed %></p>
+            <p style="font-size: 11px; margin-bottom: 6px;"><%= pet.user.company_name.presence || pet.user.first_name %></p>
+            <div style=" display: flex; justify-content: space-between;">
+              <p style="font-size: 11px; font-weight: lighter; margin-bottom: 0px"><%= pet.age %> years old</p>
+              <p style="font-size: 12px; font-weight: bolder; text-align: right ; margin-bottom: 0px">£<%= pet.cost %></p>
+            </div>
+
           </div>
         </div>
       </div>
@@ -28,6 +42,8 @@
 </div>
 </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js">
+  </script>
+  <script>
     const slider = tns({
        container: '.my-slider',
         items: 3,
@@ -38,7 +54,7 @@
         prevButton: '.prev',
         nextButton: '.next',
         navContainer: '.dots',
-     });
+    });
   </script>
 </div>
 

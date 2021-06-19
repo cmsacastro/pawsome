@@ -6,7 +6,7 @@ class PagesController < ApplicationController
         @pets = Pet.where(species: current_user.species).sort_by{ |pet| -pet.match_pets(current_user) }
         @selected_pets = @pets.first(9)
     else
-      @selected_pets = Pet.first(9)
+      @selected_pets = Pet.last(9)
     end
   end
 end
