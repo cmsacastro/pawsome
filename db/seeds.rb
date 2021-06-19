@@ -79,42 +79,42 @@ dog = Pet.new(
 dog.save!
 puts "dog created1"
 
-dog2 = Pet.new(
-  name: "Vereny", 
-  species: "dog", 
-  age: 4, 
-  breed: "Yorkshire terrier", 
-  status: "available", 
-  description: "Vereny is a kind, caring and lovely girl. She is great with children and other dogs. Vereny loves cuddles, being outside and exploring but she would also like to have a loving family and a warm couch to sleep on.", 
-  user_id: user_four.id, 
-  address: user_four.address, 
-  cost: 200, 
-  garden: false,
-  other_children: true,
-  other_pets: true, 
-  available_time: 2,
-  special_needs: false,
-  sex: "female"
-  )
+# dog2 = Pet.new(
+#   name: "Vereny",
+#   species: "dog",
+#   age: 4,
+#   breed: "Yorkshire terrier",
+#   status: "available",
+#   description: "Vereny is a kind, caring and lovely girl. She is great with children and other dogs. Vereny loves cuddles, being outside and exploring but she would also like to have a loving family and a warm couch to sleep on.",
+#   user_id: user_four.id,
+#   address: user_four.address,
+#   cost: 200,
+#   garden: false,
+#   other_children: true,
+#   other_pets: true,
+#   available_time: 2,
+#   special_needs: false,
+#   sex: "female"
+#   )
 
   # file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623784113/oxr0ziutpf7vfez1fno7647ngeor.jpg')
   # puts"file1"
   # dog2.photos.attach(io: file, filename: 'oxr0ziutpf7vfez1fno7647ngeor.jpg', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623784014/ju0aq64ytn79uzc7wur2p3a7qtyt.jpg')
-  puts"file2"
-  dog2.photos.attach(io: file, filename: 'ju0aq64ytn79uzc7wur2p3a7qtyt.jpg', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623783916/vx53wll8egl3xn9hx3v4hkz7bnqn.jpg')
-  puts"file3"
-  dog2.photos.attach(io: file, filename: 'vx53wll8egl3xn9hx3v4hkz7bnqn.jpg', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623783356/0yho1ert82dfbb8m2r1i3uq57gbb.jpg')
-  puts"file4"
-  dog2.photos.attach(io: file, filename: '0yho1ert82dfbb8m2r1i3uq57gbb.jpg', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623780294/sdlbnsikoft1rhtetfcari6s6w14.jpg')
-  puts"file5"
-  dog2.photos.attach(io: file, filename: 'sdlbnsikoft1rhtetfcari6s6w14.jpg', content_type: 'image/jpg')
+#   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623784014/ju0aq64ytn79uzc7wur2p3a7qtyt.jpg')
+#   puts"file2"
+#   dog2.photos.attach(io: file, filename: 'ju0aq64ytn79uzc7wur2p3a7qtyt.jpg', content_type: 'image/jpg')
+#   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623783916/vx53wll8egl3xn9hx3v4hkz7bnqn.jpg')
+#   puts"file3"
+#   dog2.photos.attach(io: file, filename: 'vx53wll8egl3xn9hx3v4hkz7bnqn.jpg', content_type: 'image/jpg')
+#   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623783356/0yho1ert82dfbb8m2r1i3uq57gbb.jpg')
+#   puts"file4"
+#   dog2.photos.attach(io: file, filename: '0yho1ert82dfbb8m2r1i3uq57gbb.jpg', content_type: 'image/jpg')
+#   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623780294/sdlbnsikoft1rhtetfcari6s6w14.jpg')
+#   puts"file5"
+#   dog2.photos.attach(io: file, filename: 'sdlbnsikoft1rhtetfcari6s6w14.jpg', content_type: 'image/jpg')
 
-dog2.save!
-puts "dog created2"
+# dog2.save!
+# puts "dog created2"
 
 dog3 = Pet.new(
   name: "Lassie", 
