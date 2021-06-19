@@ -1,4 +1,6 @@
 export const submitOnEnter = () => {
+  const messagesContainer = document.getElementById('messages');
+  if (messagesContainer) {
   document.getElementById('message_body')
     .addEventListener('keydown', function(event) {
         if (event.code === 'Enter')
@@ -7,4 +9,5 @@ export const submitOnEnter = () => {
             document.getElementById('new_message').submit();
         }
     });
+  }
 };
