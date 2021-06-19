@@ -1,24 +1,27 @@
-<div class="container" style="margin-top: 120px;">
+<div class="container" style="margin: 120px 0px 0px 0px; padding: 0px; display:flex; justify-content:space-between;">
+  <div class="profile-banner">
+    <%= cl_image_tag current_user.photos.key, height: 230, width: 280, crop: :fill, :class=> 'profile-image'%>
+    <h2>Hi <%= current_user.first_name %>!</h2>
+  </div>
+  <div>
+    <%= link_to "Choose your preferences", preference_path, class: "btn btn-primary" %>
+    <h1>I am the user show page</h1>
+    <h2>Here are your conversations</h2>
+    <ul>
+      <% @conversations.each do |c| %>
+        <div class="container border">
+          <!-- TODO: Grab the sender name from the sender_id -->
+          <% if c.messages.last.user_id == current_user.id %>
+            <p><%= link_to "You wrote: #{c.messages.last.body}", conversation_path(c.id) %></p>
+          <% else %>
+          <h4 class="font-weight-bold"><%= "New message"%></h4>
+            <p><%= link_to "#{c.messages.last.user.nickname} wrote: #{c.messages.last.body}", conversation_path(c.id) %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
 
-  <h1>Hello <%= current_user.first_name %></h1>
-
-  <%= link_to "Choose your preferences", preference_path, class: "btn btn-primary" %>
-
-  <h1>I am the user show page</h1>
-  <h2>Here are your conversations</h2>
-  <ul>
-    <% @conversations.each do |c| %>
-      <div class="container border">
-        <!-- TODO: Grab the sender name from the sender_id -->
-        <% if c.messages.last.user_id == current_user.id %>
-          <p><%= link_to "You wrote: #{c.messages.last.body}", conversation_path(c.id) %></p>
-        <% else %>
-        <h4 class="font-weight-bold"><%= "New message"%></h4>
-          <p><%= link_to "#{c.messages.last.user.nickname} wrote: #{c.messages.last.body}", conversation_path(c.id) %></p>
-        <% end %>
-      </div>
-    <% end %>
-  </ul>
 </div>
 
 
