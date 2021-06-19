@@ -77,7 +77,7 @@ dog = Pet.new(
   dog.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog.save!
-puts "dog created"
+puts "dog created1"
 
 dog2 = Pet.new(
   name: "Vereny", 
@@ -109,7 +109,7 @@ dog2 = Pet.new(
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog2.save!
-puts "dog created"
+puts "dog created2"
 
 dog3 = Pet.new(
   name: "Lassie", 
@@ -132,7 +132,7 @@ dog3 = Pet.new(
   dog3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog3.save!
-puts "dog created"
+puts "dog created3"
 
 dog4 = Pet.new(
   name: "Vencel", 
@@ -155,7 +155,7 @@ dog4 = Pet.new(
   dog4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog4.save!
-puts "dog created"
+puts "dog created4"
 
 dog5 = Pet.new(
   name: "Melinda", 
@@ -178,7 +178,7 @@ dog5 = Pet.new(
   dog5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog5.save!
-puts "dog created"
+puts "dog created5"
 
 dog6 = Pet.new(
   name: "Tomi", 
