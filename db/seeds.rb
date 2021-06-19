@@ -25,6 +25,8 @@ user_two.save!
 puts "Battersea Dogs & Cats Home created. They want people to adopt their pets"
 
 user_three = User.new(email: "three@example.com", password: "123456", first_name: "Sally", last_name: "Fields", company_name: "", nickname: "Sally", address:"16a Griffiths Road, London SW19 1SP")
+file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624097496/matheus-ferrero-pg_WCHWSdT8-unsplash_pjx9lj.jpg')
+user_three.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 user_three.save!
 puts "Sally Fields created. She wants to make enquiries"
 
