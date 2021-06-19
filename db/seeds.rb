@@ -114,7 +114,6 @@ dog2 = Pet.new(
 
 dog2.save!
 puts "dog created2"
->>>>>>> f18538426704973983b8628db2557b7f1cb2bde6
 
 dog3 = Pet.new(
   name: "Lassie", 
