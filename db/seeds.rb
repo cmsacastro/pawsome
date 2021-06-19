@@ -10,10 +10,9 @@ require "open-uri"
 # Simple seed file
 
 # One user who is a 'seller'
-
 Enquiry.destroy_all
-Pet.destroy_all
 User.destroy_all
+Pet.destroy_all
 puts "DB wiped"
 
 user_one = User.new(email: "one@example.com", password: "123456", first_name: "Seb", last_name: "Saunier", company_name: "", nickname: "Sebby", address:"50 Battersea Park Rd, Nine Elms, London SW8 4AA")
@@ -25,7 +24,7 @@ user_two.save!
 puts "Battersea Dogs & Cats Home created. They want people to adopt their pets"
 
 user_three = User.new(email: "three@example.com", password: "123456", first_name: "Sally", last_name: "Fields", company_name: "", nickname: "Sally", address:"16a Griffiths Road, London SW19 1SP")
-file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624097496/matheus-ferrero-pg_WCHWSdT8-unsplash_pjx9lj.jpg')
+file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624109306/christiana-rivers-O_XIvDy0pcs-unsplash_jfjedy.jpg')
 user_three.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 user_three.save!
 puts "Sally Fields created. She wants to make enquiries"

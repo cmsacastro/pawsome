@@ -3,7 +3,7 @@ class Pet < ApplicationRecord
   has_many :enquiries
 
   has_many :favorite_pets
-  has_many :favorited_by, through: :favorite_pets, source: :user
+  # has_many :favorited_by, through: :favorite_pets, source: :user
 
   validates :name, :address, :species, :age, :breed, :description, :status, presence: true
   validates :description, length: { maximum: 500, too_long: "%{count} characters is the maximum allowed" }
