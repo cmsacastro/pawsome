@@ -118,6 +118,7 @@
               <%= f.submit "Chat with #{@pet.user.company_name}" %>
             <% end %>
       </div>
+      <%= link_to "Add to favorites", pet_favorite_pets_path(@pet), method: 'post' %>
     </div>
     <div class="pet-info-show" >
           <h4>Important information about me</h4>
