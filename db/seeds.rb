@@ -77,7 +77,7 @@ dog = Pet.new(
   dog.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog.save!
-puts "dog created"
+puts "dog created1"
 
 dog2 = Pet.new(
   name: "Vereny", 
@@ -97,6 +97,7 @@ dog2 = Pet.new(
   sex: "female"
   )
 
+
   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624114783/q5kafgb17n25u8iay7c2dnj90bvy.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624114787/ie7bx287215hph5bb0iv7lgup1tw.jpg')
@@ -110,8 +111,9 @@ dog2 = Pet.new(
   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624114785/5lr4xz7cw7q8b9pctk3ccosdfsln.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
+
 dog2.save!
-puts "dog created"
+puts "dog created2"
 
 dog3 = Pet.new(
   name: "Lassie", 
@@ -131,10 +133,10 @@ dog3 = Pet.new(
   sex: "female" )
 
   file = URI.open('https://a-z-animals.com/media/animals/images/original/labrador_retriever.jpg')
-  dog3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  dog3.photos.attach(io: file, filename: 'labrador_retriever.jpg', content_type: 'image/jpg')
 
 dog3.save!
-puts "dog created"
+puts "dog created3"
 
 dog4 = Pet.new(
   name: "Vencel", 
@@ -157,7 +159,7 @@ dog4 = Pet.new(
   dog4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog4.save!
-puts "dog created"
+puts "dog created4"
 
 dog5 = Pet.new(
   name: "Melinda", 
@@ -180,7 +182,7 @@ dog5 = Pet.new(
   dog5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog5.save!
-puts "dog created"
+puts "dog created5"
 
 dog6 = Pet.new(
   name: "Tomi", 

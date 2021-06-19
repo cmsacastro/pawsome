@@ -26,7 +26,6 @@ class PetsController < ApplicationController
     else
       @selected_pets = Pet.last(9)
     end
-
   end
 
   def new
