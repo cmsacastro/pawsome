@@ -1,9 +1,10 @@
 <div class="message-container <%= current_user.id == message.user_id ? 'sent' : 'received' %>" id="message-<%= message.id %>">
   <i class="">
-    <span><%= current_user.id == message.user_id ? 'You' : message.user.nickname %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+    <!-- This author says 'You' on the NEW message -->
+    <span class="text-author"><%= name %></span>
+    <small class="date-time"><%= message.created_at.strftime("%b %e at %l:%M%p") %></small>
   </i>
-  <p><span><%= message.body %><span></p>
+  <p><span><%= message.body %></span></p>
 </div>
 
 
