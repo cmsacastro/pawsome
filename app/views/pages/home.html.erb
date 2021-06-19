@@ -1,12 +1,40 @@
 <div id="home-banner">
-  <h1 style="color:white; margin-left: 48px; width: 480px;">Are you looking to <strong>adopt a pet . . .</strong> but don't know where to start?</h1>
-  <div id="home-button">
-    <%= link_to "Visit us", pets_path, id: "pets"%>
+  <div id="video-div">
+    <video autoplay muted loop id="myVideo">
+      <source src="https://res.cloudinary.com/dk4ojzhp0/video/upload/v1624038813/production_ID_4504643_igncoj_online-video-cutter.com_2_scxj8v.mp4" type="video/mp4">
+    </video>
   </div>
-  <video autoplay muted loop id="myVideo">
-    <source src="https://res.cloudinary.com/dk4ojzhp0/video/upload/v1623771318/production_ID_4504643_igncoj.mp4" type="video/mp4">
-  </video>
-</div>
-<div>
-  <%= render 'shared/carousel' %>
+  <div style="height:0px">
+    <h1 id="slogan">Are you looking to <strong>adopt a pet . . .</strong> but don't know where to start?</h1>
+    <div id="home-button">
+      <%= link_to "Visit us", pets_path, id: "pets"%>
+    </div>
+  </div>
+
+  <div class="info-home">
+    <div style="display:flex">
+      <i class="fas fa-puzzle-piece"></i>
+      <div>
+        <h4><strong>Find a Perfect Match</strong></h4>
+        <p>Just <strong>sign-up</strong> and select your preferences and browser for your perfect match.</p>
+      </div>
+    </div>
+    <div style="display:flex">
+      <i class="fas fa-user-check"></i>
+      <div>
+        <h4><strong>Certified Adoption Centres</strong></h4>
+        <p>All your users are certified. Know from whom you are adopting.</p>
+      </div>
+    </div>
+    <div style="display:flex">
+      <i class="fas fa-comments"></i>
+      <div>
+        <h4><strong>Direct Communication</strong></h4>
+        <p>Get in touch with Adoption Centres directly from our website.</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= render 'shared/carousel' %>
+  </div>
 </div>
