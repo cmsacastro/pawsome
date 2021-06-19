@@ -1,6 +1,13 @@
 <div id="pet-show-container">
+
+
   <div id="pet-image-container">
+    <%= link_to "Back to pets", pets_path, class: "back" %>
+    <br><br><br>
+    <div class="pet-show-title">
     <h1>Meet <%= @pet.name %></h1>
+    </div>
+    <br><br>
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" >
 
       <!--Controls-->
@@ -69,7 +76,7 @@
     <%# </div> %>
     <div style="display: flex; justify-content: space-between; col-12 col-lg-8">
       <div>
-      <br>
+      <br><br>
         <h2>About me</h2>
         <hr>
         <div>
@@ -79,11 +86,12 @@
           <h4>Age</h4>
           <%= @pet.age %>
           <br><br>
+          <h4>Sex</h4>
+          <%= @pet.sex%>
+          <br><br>
           <h4>Status</h4>
           <%= @pet.status%>
           <br><br>
-          <h4>Sex</h4>
-          <%= @pet.sex%>
         </div>
         
         <div>
@@ -96,7 +104,7 @@
         
       </div>
 
-      <div class="pet-info-show-2 col-12 col-lg-4" >
+      <div class="pet-info-show-2 col-12 col-lg-5" >
           <div>
             <h4>Adoption Fee</h4>
             <p>£<%= @pet.cost %></p>
@@ -122,49 +130,64 @@
       </div>
     </div>
     <div class="pet-info-show" >
-          <h4>Important information about me</h4>
-          <br>
-          <div style="display: flex; justify-content: space-between; col-12 col-lg-6" >
+          
+          <div style="display: flex; justify-content: space-between; col-12 col-lg-6"  class="pet-show-important">
+            <ul>
+             <li><i class="fas fa-paw"></i>
+                <% if @pet.garden == true %>
+                  <%= "I need a garden" %>
+                  <% else %>
+                  <%= "I can live in an apartment" %>
+                <%end%>
+             </li>
+              <br><br>
+              <li><i class="fas fa-paw"></i>
+                <% if @pet.other_children == true %>
+                  <%= "I can live with children" %>
+                  <% else %>
+                  <%= "Sorry I'm not suitable to live with children :(" %>
+                <%end%>
+              </li>
+                  <br><br>
+              <li><i class="fas fa-paw"></i>
+                <% if @pet.other_pets == true %>
+                  <%= "I love to live with other pets" %>
+                  <% else %>
+                  <%= "Im not great with other pets" %>
+                <%end%>
+              <br><br>
+              </li>
+            </ul>
             <div>
-              <% if @pet.garden == true %>
-                <%= "I need a garden" %>
-                <% else %>
-                <%= "I can live in an apartment" %>
-              <%end%>
-              <br><br>
-              <% if @pet.other_children == true %>
-                <%= "I can live with children" %>
-                <% else %>
-                <%= "Sorry I'm not suitable to live with children :(" %>
-              <%end%>
-              <br><br>
-              <% if @pet.other_pets == true %>
-                <%= "I love to live with other pets" %>
-                <% else %>
-                <%= "Im not great with other pets" %>
-              <%end%>
-              <br><br>
-            </div>
-            <div>
-              <% if @pet.special_needs == true %>
-                <%= "I require extra care. Please ask my carer for details" %>
-                <% else %>
-                <%= "I do not require any special care" %>
-              <%end%>
-              <br><br>
-              <% if @pet.available_time == 1 %>
-                <%= "I can be left unattended up to 3 hours per day" %>
-                <% elsif @pet.available_time == 2 %>
-                <%= "I can be left unattended up to 6 hours per day" %>
-                <% elsif @pet.available_time == 3 %>
-                <%= "I can be left unattended up to 10 hours per day" %>
-                <% elsif @pet.available_time == 4 %>
-                <%= "I can be left unattended for more than 10+ hours per day" %>
-              <%end%>
-              <br><br>
-              <p>Please enquire now </p>
+              <ul >
+                <li> <i class="fas fa-paw"></i>
+                  <% if @pet.special_needs == true %>
+                    <%= "I require extra care. Please ask my carer for details" %>
+                    <% else %>
+                    <%= "I do not require any special care" %>
+                  <%end%>
+                </li> 
+                <br><br>
+                <li><i class="fas fa-paw"></i>
+                  <% if @pet.available_time == 1 %>
+                    <%= "I can be left unattended up to 3 hours per day" %>
+                    <% elsif @pet.available_time == 2 %>
+                    <%= "I can be left unattended up to 6 hours per day" %>
+                    <% elsif @pet.available_time == 3 %>
+                    <%= "I can be left unattended up to 10 hours per day" %>
+                    <% elsif @pet.available_time == 4 %>
+                    <%= "I can be left unattended for more than 10+ hours per day" %>
+                  <%end%>
+                </li>
+                <br><br>
+                <li><i class="fas fa-paw"></i> Please enquire now </li>
+                <br><br>
+              </ul>
             </div>
           </div>  
         </div>
+      <div>
+      <%= render 'shared/carousel' %>
+    </div>
   </div>  
 </div> 
