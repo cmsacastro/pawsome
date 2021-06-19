@@ -5,8 +5,12 @@
     <%= link_to "Back to pets", pets_path, class: "back" %>
     <br><br><br>
     <div class="pet-show-title">
-    <h1>Meet <%= @pet.name %></h1>
+      <h1>Meet <%= @pet.name %></h1>
     </div>
+    <div class="add-favorite" style="float: right;">
+      <%= link_to "Add to favorites", pet_favorite_pets_path(@pet), method: 'post', class: "back" %>
+    </div>
+
     <br><br>
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" >
 
@@ -126,7 +130,6 @@
               <%= f.submit "Chat with #{@pet.user.company_name}" %>
             <% end %>
       </div>
-      <%= link_to "Add to favorites", pet_favorite_pets_path(@pet), method: 'post' %>
     </div>
     <div class="pet-info-show" >
           
@@ -186,7 +189,7 @@
           </div>  
         </div>
       <div>
-      <%= render 'shared/carousel' %>
     </div>
   </div>  
 </div> 
+ <%= render 'shared/carousel' %>
