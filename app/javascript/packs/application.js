@@ -24,16 +24,16 @@ require("channels")
 
 // External imports
 import "bootstrap";
-
-
+// import { tns } from "./node_modules/tiny-slider/src/tiny-slider"
 // Internal imports, e.g:
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { initUpdateNavbarOnScroll } from './components/navbar';
 import { initMapbox } from '../plugins/init_mapbox';
-
+import { initslider } from './components/carousel';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initChatroomCable();
   initUpdateNavbarOnScroll();
   initMapbox();
+  initslider();
 });
