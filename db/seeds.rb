@@ -98,14 +98,19 @@ dog2 = Pet.new(
   )
 
   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623784113/oxr0ziutpf7vfez1fno7647ngeor.jpg')
+  puts"file1"
   dog2.photos.attach(io: file, filename: 'oxr0ziutpf7vfez1fno7647ngeor.jpg', content_type: 'image/jpg')
   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623784014/ju0aq64ytn79uzc7wur2p3a7qtyt.jpg')
+  puts"file2"
   dog2.photos.attach(io: file, filename: 'ju0aq64ytn79uzc7wur2p3a7qtyt.jpg', content_type: 'image/jpg')
   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623783916/vx53wll8egl3xn9hx3v4hkz7bnqn.jpg')
+  puts"file3"
   dog2.photos.attach(io: file, filename: 'vx53wll8egl3xn9hx3v4hkz7bnqn.jpg', content_type: 'image/jpg')
   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623783356/0yho1ert82dfbb8m2r1i3uq57gbb.jpg')
+  puts"file4"
   dog2.photos.attach(io: file, filename: '0yho1ert82dfbb8m2r1i3uq57gbb.jpg', content_type: 'image/jpg')
   file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1623780294/sdlbnsikoft1rhtetfcari6s6w14.jpg')
+  puts"file5"
   dog2.photos.attach(io: file, filename: 'sdlbnsikoft1rhtetfcari6s6w14.jpg', content_type: 'image/jpg')
 
 dog2.save!
