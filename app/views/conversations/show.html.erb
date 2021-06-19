@@ -1,16 +1,22 @@
 <div class="body-container">
   <div class="messages-container">
+    <h2 class="conversation-title">Chat between You and <%= @conversation.recipient.company_name %>
+    <hr>
+    </h2>
     <div id="messages" data-conversation-id="<%= @conversation.id %>" data-current-user-id="<%= current_user.id %>">
 
       <% @messages.each do |message| %>
-        <%= render 'messages/message', message: message %>
+        <%= render 'messages/message', message: message, name: current_user.id == message.user_id ? 'You' : message.user.nickname %>
       <% end %>
     </div>
+
 <!-- TODO: add (press 'enter' to send) functionality -->
 
-    <%= simple_form_for [ @conversation, @message ] do |f| %>
-      <%= f.input :body, label: false, placeholder: "Type a message..." %>
-      <%= f.submit %>
-    <% end %>
+    <div class="message-submit">
+      <%= simple_form_for [ @conversation, @message ], wrapper: :inline_form, id: 'form' do |f| %>
+        <%= f.input :body, label: false, placeholder: "Type a message...", id: "chat-input", input_html: {:autofocus => true}  %>
+        <%= f.submit class: 'chat-button' %>
+      <% end %>
+    </div>
   </div>
 </div>

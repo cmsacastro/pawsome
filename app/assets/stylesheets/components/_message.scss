@@ -12,9 +12,22 @@
 
 h1{
   font-size: 26px;
-
 }
 
+.date-time {
+  font-size: 12px;
+}
+
+.text-author {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.conversation-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 48px;
+}
 
 .messages-container {
   display: flex;
@@ -22,27 +35,50 @@ h1{
   justify-content: flex-end;
   background-color: #ffffff;
   box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
-  width: 80vw;
+  width: 60vw;
   min-height: 700px;
   margin-top: 100px;
   margin-right: auto;
   margin-left: auto;
-  padding: 24px;
+  padding: 24px 80px;
 }
 .message-container {
   p {
-    font-size: 24px;
+    margin-top: 8px;
+    font-size: 20px;
+  }
+  i {
+    color: grey;
   }
 }
 
+.message-submit {
+
+}
+
+.message_body {
+  flex: 4
+}
+
+form {
+  display:flex;
+}
+
+.chat-button {
+   flex: 1;
+   margin: 8px 12px;
+}
+
+  // TODO: add bg fade
 .message-container.new-message p {
-  font-weight: bolder;
   text-align: left !important;
   span {
+          display: inline-block;
           padding: 8px;
-          background-color: white !important;
+          animation: fadebackground 3s;
           color: black !important;
           border-radius: 12px;
+          box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
         }
 }
 
@@ -51,38 +87,32 @@ h1{
   align-items: stretch;
   p {
     span {
-        padding: 8px 4px 8px 8px;
-        background-color: #0195FF;
+        display: inline-block;
+        padding: 8px;
+        background-color: #91B25B;
         color: white;
         border-radius: 12px;
+        box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
       }
   }
 }
 
 .message-container.received {
-  // TODO: add bg fade
   text-align: left;
   p {
       span {
+          display: inline-block;
+          color: #000000;
           padding: 8px;
           background-color: white;
           border-radius: 12px;
-          box-shadow: 0px 0px 2px rgba(0,0,0,0.1);
-          span {
-            box-shadow: 0px 0px 0px rgba(0,0,0,0.0);
-
-          }
-        }
+          box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+         }
     }
 }
 
-new-received {
-  text-align: left !important;
-  p {
-      span {
-          padding: 8px !important;
-          background-color: white !important;
-          border-radius: 12px !important;
-        }
-    }
+
+@keyframes fadebackground {
+  from {background-color: #FFCB74;}
+  to {background-color: #ffffff;}
 }
