@@ -27,6 +27,9 @@ label.select.optional {
   transform: scale(0);
 }
 
+.tag-selector:not(:checked) + label {
+  color: $pawsome-darkgrey
+}
 .tag-selector + label {
   text-align: center;
   text-decoration: none;
@@ -37,7 +40,6 @@ label.select.optional {
   border-radius: 8px;
   padding: 6px 12px 3px 12px;
   background-color: transparent;
-  color: black;
   border: 1px solid $pawsome-green;
   margin-right: 0.6rem;
   margin-bottom: 0.1rem;
@@ -47,11 +49,13 @@ label.select.optional {
 .tag-selector:checked + label {
   background-color: $pawsome-green;
   font-weight: bolder;
+  color: $pawsome-darkgrey
 }
 
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-  color: $black;;
+  color: $pawsome-darkgrey
 }
+
 
 input {
   overflow:auto;
@@ -82,3 +86,5 @@ input {
 fieldset.form-group.radio_buttons.optional{
   margin-bottom: 3px;
 }
+
+

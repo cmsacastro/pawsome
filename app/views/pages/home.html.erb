@@ -1,11 +1,11 @@
 <div id="home-banner">
   <div id="video-div">
     <video autoplay muted loop id="myVideo">
-      <source src="https://res.cloudinary.com/dk4ojzhp0/video/upload/v1624038813/production_ID_4504643_igncoj_online-video-cutter.com_2_scxj8v.mp4" type="video/mp4">
+      <source src="https://res.cloudinary.com/dk4ojzhp0/video/upload/v1624191094/production_ID_4504643_igncoj_2_tekr6z.mp4" type="video/mp4">
     </video>
   </div>
   <div style="height:0px">
-    <h1 id="slogan">Are you looking to <strong>adopt a pet . . .</strong> but don't know where to start?</h1>
+    <h1 id="slogan">Are you looking to <strong>adopt a pet </strong> but don't know where to start?</h1>
     <div id="home-button">
       <%= link_to "Visit us", pets_path, id: "pets"%>
     </div>
@@ -13,10 +13,10 @@
 
   <div class="info-home">
     <div style="display:flex">
-      <i class="fas fa-puzzle-piece"></i>
+      <i class="fas fa-cat"></i>
       <div>
-        <h4><strong>Find a Perfect Match</strong></h4>
-        <p>Just <strong>sign-up</strong> and select your preferences and browser for your perfect match.</p>
+        <h4><strong>Find Your Perfect Pet</strong></h4>
+        <p><strong>Sign-Up</strong> and get access to our custom matching system to finds your ideal pet.</p>
       </div>
     </div>
     <div style="display:flex">
@@ -34,7 +34,12 @@
       </div>
     </div>
   </div>
-  <div>
-    <%= render 'shared/carousel' %>
-  </div>
+    <div class="slider-container">
+      <% if current_user && current_user.species != "no preference" %>
+        <h1>Top Picks For You</h1>
+      <% else %>
+        <h1>Meet Our Pets</h1>
+      <% end %>
+      <%= render 'shared/carousel' %>
+    </div>
 </div>

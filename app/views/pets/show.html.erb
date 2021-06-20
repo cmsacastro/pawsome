@@ -39,12 +39,12 @@
           <div class="carousel-item active">
             <div class="row">
               <div class="col-md-4">
-                <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path slice.first.first.key %>')">
+                <div class="mb-2 pet_image" style="background-image: url('<%= cl_image_path slice.first.first.key %>')">
                 </div>
               </div>
               <% slice.first[1..-1].each do |photo| %> 
                 <div class="col-md-4 clearfix d-none d-md-block"> 
-                  <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path photo.key %>')">
+                  <div class="mb-2 pet_image" style="background-image: url('<%= cl_image_path photo.key %>')">
                   </div>
                 </div>
               <%end%>
@@ -54,12 +54,12 @@
             <div class="carousel-item">
               <div class="row">
                 <div class="col-md-4">
-                  <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path min_slice.first.key %>')">
+                  <div class="mb-2 pet_image" style="background-image: url('<%= cl_image_path min_slice.first.key %>')">
                   </div>
                 </div>
                   <% min_slice[1..-1].each do |photo| %> 
                     <div class="col-md-4 clearfix d-none d-md-block"> 
-                      <div class="card mb-2 pet_image" style="background-image: url('<%= cl_image_path photo.key %>')">
+                      <div class="mb-2 pet_image" style="background-image: url('<%= cl_image_path photo.key %>')">
                       </div>
                     </div>
                   <%end%>   
@@ -138,7 +138,7 @@
              <li><i class="fas fa-paw"></i>
                 <% if @pet.garden == true %>
                   <%= "I need a garden" %>
-                  <% else %>
+                <% else %>
                   <%= "I can live in an apartment" %>
                 <%end%>
              </li>
@@ -146,7 +146,7 @@
               <li><i class="fas fa-paw"></i>
                 <% if @pet.other_children == true %>
                   <%= "I can live with children" %>
-                  <% else %>
+                <% else %>
                   <%= "Sorry I'm not suitable to live with children :(" %>
                 <%end%>
               </li>
@@ -154,7 +154,7 @@
               <li><i class="fas fa-paw"></i>
                 <% if @pet.other_pets == true %>
                   <%= "I love to live with other pets" %>
-                  <% else %>
+                <% else %>
                   <%= "Im not great with other pets" %>
                 <%end%>
               <br><br>
@@ -165,7 +165,7 @@
                 <li> <i class="fas fa-paw"></i>
                   <% if @pet.special_needs == true %>
                     <%= "I require extra care. Please ask my carer for details" %>
-                    <% else %>
+                  <% else %>
                     <%= "I do not require any special care" %>
                   <%end%>
                 </li> 
@@ -173,11 +173,11 @@
                 <li><i class="fas fa-paw"></i>
                   <% if @pet.available_time == 1 %>
                     <%= "I can be left unattended up to 3 hours per day" %>
-                    <% elsif @pet.available_time == 2 %>
+                  <% elsif @pet.available_time == 2 %>
                     <%= "I can be left unattended up to 6 hours per day" %>
-                    <% elsif @pet.available_time == 3 %>
+                  <% elsif @pet.available_time == 3 %>
                     <%= "I can be left unattended up to 10 hours per day" %>
-                    <% elsif @pet.available_time == 4 %>
+                  <% elsif @pet.available_time == 4 %>
                     <%= "I can be left unattended for more than 10+ hours per day" %>
                   <%end%>
                 </li>
@@ -192,4 +192,7 @@
     </div>
   </div>  
 </div> 
- <%= render 'shared/carousel' %>
+<div class="slider-container">
+  <h1>More Pets Like <%= @pet.name %></h1>
+  <%= render 'shared/carousel' %>
+</div>
