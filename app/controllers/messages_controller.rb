@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
         @conversation,
         { message: render_to_string(partial: "message", locals: { message: @message, name: @message.user.nickname }), user_id: current_user.id }.to_json
       )
-      redirect_to conversation_path(@conversation, anchor: "message-#{@message.id}")
+      redirect_to conversation_path(@conversation)
     else
       render "conversations/show"
     end
