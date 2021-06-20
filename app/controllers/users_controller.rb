@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @conversations = Conversation.where(sender: current_user).or(Conversation.where(recipient: current_user))
+    @favorite_pets = FavoritePet.where(user_id: current_user)
   end
 
   # enquires on my pets is current_user.pets.enquiries
