@@ -31,6 +31,7 @@ import { initUpdateNavbarOnScroll } from './components/navbar';
 import { initMapbox } from '../plugins/init_mapbox';
 import { submitOnEnter } from './components/submitOnEnter';
 import { initslider } from './components/carousel';
+import { initFlatpickr } from './components/init_flatpickr';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -39,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
   initMapbox();
   initslider();
+  initFlatpickr();
 });
 
 

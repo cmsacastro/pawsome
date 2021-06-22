@@ -1,10 +1,9 @@
-<div class="container">
-  <h1>I am the enquiry form</h1>
-  <h2>does this work?</h2>
-  <div class="p-4">
+<div class="row" style="margin-top: 100px;">
+  <div class="col-12 col-md-6 offset-md-3 bg-white px-3 py-2 rounded-lg shadow-lg">
     <%= simple_form_for [@pet, @enquiry] do |f| %>
       <%= f.input :message, label: 'Write a message', placeholder: "eg: Is this pet available?" %>
-      <%= f.submit 'Submit enquiry', class: "btn btn-primary" %>
+      <%= f.input :date, as: :string %>
+      <%= f.submit 'Submit enquiry', class: "back" %>
     <% end %>
   </div>
 </div>

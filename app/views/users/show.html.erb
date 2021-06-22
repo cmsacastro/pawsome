@@ -1,5 +1,5 @@
 <div class="container" style="margin: 120px 0px 0px 0px; padding: 0px; display:flex; justify-content:flex-start;">
-  <div class="profile-banner">
+  <div class="profile-banner flex-shrink-0">
     <div class="profile-img">
       <%= cl_image_tag current_user.photo.key, height: 180, width: 180,  crop: :fill %>
     </div>
@@ -13,26 +13,57 @@
     </div>
   </div>
   <div class="profile-right">
-    <h2>Here are your conversations</h2>
-    <ul>
-      <% @conversations.each do |c| %>
-        <div class="container border">
-          <!-- TODO: Grab the sender name from the sender_id -->
-          <% if c.messages.last.user_id == current_user.id %>
-            <p><%= link_to "You wrote: #{c.messages.last.body}", conversation_path(c.id) %></p>
-          <% else %>
-          <h4 class="font-weight-bold"><%= "New message"%></h4>
-            <p><%= link_to "#{c.messages.last.user.nickname} wrote: #{c.messages.last.body}", conversation_path(c.id) %></p>
+    <nav style="height: 50px;">
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Conversations</a>
+        <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Favorite Pets</a>
+        <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Enquiries</a>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <h2 class="mt-3">Here are your conversations</h2>
+        <ul>
+          <% @conversations.each do |c| %>
+            <div class="container border">
+              <!-- TODO: Grab the sender name from the sender_id -->
+              <% if c.messages.any? %>
+                <% if c.messages.last.user_id == current_user.id %>
+                  <p><%= link_to "You wrote: #{c.messages.last.body}", conversation_path(c.id) %></p>
+                <% else %>
+                <h4 class="font-weight-bold"><%= "New message"%></h4>
+                  <p><%= link_to "#{c.messages.last.user.nickname} wrote: #{c.messages.last.body}", conversation_path(c.id) %></p>
+                <% end %>
+              <% else %>
+                <p><%= link_to "This is a brand new conversation", conversation_path(c.id) %></p>
+              <% end %>
+            </div>
           <% end %>
-        </div>
-      <% end %>
-    </ul>
-    <hr>
-    <div class="container">
-      <h1>Your favorite pets</h1>
-      <% @favorite_pets.each do |f| %>
-        <%= f.pet.name %>
-      <% end %>
+        </ul>
+      </div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <h2 class="mt-3">Your favorite pets</h2>
+        <% @favorite_pets.each do |f| %>
+          <%= f.pet.name %>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <h2 class="mt-3">Enquiries</h2>
+        <% current_user.enquiries.each do |enquiry| %>
+          <div>
+            <div class="d-flex align-items-end mb-2">
+              <h3 class="mb-0 mr-2"><%= enquiry.pet.name %> </h3>
+              <span class="text-muted">on <%= enquiry.date.strftime('%A, %d %b %Y %l:%M %p') %></span>
+            </div>
+            <p><%= enquiry.pet.description %></p>
+            <%= simple_form_for Conversation.new do |f| %>
+              <%= f.hidden_field :recipient_id, value: enquiry.pet.user.id %>
+              <%= f.submit "Chat with #{enquiry.pet.user.company_name}" %>
+            <% end %>
+          </div>
+          <hr>
+        <% end %>
+      </div>
     </div>
    </div>
 </div>
