@@ -1,0 +1,5 @@
+meta_product_name: "Pawsome"
+meta_title: "Pawsome - Simple and Ethical Adoption"
+meta_description: "This app is designed to facilitate pet adoption. Set your preferences and get matched with pets that fit your profile. Chat with our certified adoption centres to get your adoption process started."
+meta_image: "PAWLOGO.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
