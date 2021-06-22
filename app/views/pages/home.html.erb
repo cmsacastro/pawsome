@@ -6,9 +6,11 @@
   </div>
   <div style="height:0px">
     <h1 id="slogan">Are you looking to <strong>adopt a pet </strong> but don't know where to start?</h1>
-    <div id="home-button">
-      <%= link_to "Visit us", pets_path, id: "pets"%>
-    </div>
+    <%= link_to pets_path do %>
+      <div id="home-button">
+        visit us
+      </div>
+    <% end %>
   </div>
 
   <div class="info-home">
