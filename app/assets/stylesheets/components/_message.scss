@@ -1,5 +1,31 @@
+.chat-back {
+  position: fixed;
+  left: 48px;
+  top: 120px;
+}
 
-
+.booking-btn {
+  padding: 8px 12px;
+  background-color: #ffffff;
+  color: #ea907a;
+  border-radius: 12px;
+  border: 2px solid #ea907a;
+    &:hover {
+      color: #ffffff;
+      background-color: #ea907a;
+      border: 2px solid #ffffff;
+      a {
+        color: #ffffff;
+      }
+    }
+  a {
+    text-decoration: none;
+    color: #ea907a;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
 
 .body-container {
   display: flex;
@@ -23,10 +49,27 @@ h1{
   font-size: 14px;
 }
 
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#FBFBFA;
+    position: fixed;
+    width: 100%;
+    min-height: 100px;
+    top: 100px;
+    left: 0;
+    h4 {
+      font-size: 20px;
+    }
+}
+
 .conversation-title {
   font-size: 20px;
   text-align: center;
-  margin-bottom: 48px;
+  h4 {
+    margin: 8px 0 16px 0;
+  }
 }
 
 .messages-container {
@@ -36,7 +79,7 @@ h1{
 
   width: 60vw;
   min-height: 100%;
-  margin-top: 100px;
+  margin-top: 150px;
   margin-bottom: 100px;
   margin-right: auto;
   margin-left: auto;
