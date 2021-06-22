@@ -9,6 +9,7 @@ class ConversationsController < ApplicationController
     @conversation.messages.where.not(user: current_user).update_all(read: true)
     @message = Message.new
     @messages = @conversation.messages.order(id: :asc)
+    @pet = Pet.find_by id: session[:pet_id]
     # & is a safe operator. Only call last if last exists. Use in external APIs normally
     # @messages&.last&.update(read: true) unless @messages.last.user == current_user
     # @messages = @conversation.messages.order(id: :desc)

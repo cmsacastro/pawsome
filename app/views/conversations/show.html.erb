@@ -1,7 +1,9 @@
 <div class="body-container">
   <div class="messages-container">
-    <h2 class="conversation-title">Chat between You and <%= @conversation.recipient.company_name %>
-    <hr>
+    .d-flex.w-1
+    <h2 class="conversation-title">
+      Chat between You and <%= @conversation.recipient.company_name %>
+      <hr>
     </h2>
     <div id="messages" data-conversation-id="<%= @conversation.id %>" data-current-user-id="<%= current_user.id %>">
 
@@ -18,5 +20,8 @@
         <%= f.submit class: 'chat-button' %>
       <% end %>
     </div>
+    <% if @pet.present? %>
+      <span><%= link_to "Book a play date with #{@pet.name}", new_pet_enquiry_path(@pet), class: 'back d-inline-block w-100 mt-2' %></span>
+    <% end %>
   </div>
 </div>
