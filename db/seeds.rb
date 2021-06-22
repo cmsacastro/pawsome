@@ -11,9 +11,13 @@ require "open-uri"
 
 # One user who is a 'seller'
 Enquiry.destroy_all
+puts "All playdates deleted"
+Conversation.destroy_all
+puts "All conversations deleted"
 User.destroy_all
+puts "All users deleted"
 Pet.destroy_all
-puts "DB wiped"
+puts "All pets wiped"
 
 user_one = User.new(email: "one@example.com", password: "123456", first_name: "Linda", last_name: "McDowell", company_name: "", nickname: "Mc-D", address:"60 Claylands Rd, London SW8 1PH")
 file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624109798/photo-1604983361403-ac3d3cbac41d_kjaeff.jpg')
@@ -488,12 +492,7 @@ cat.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 cat.save!
 puts "cat created"
 
-
-enquiry_one = Enquiry.new(pet_id: dog.id, user_id: user_one.id, message: "I would like to adopt this dog, even though cats are obviously better")
-enquiry_one.save!
-puts "enquiry made by Seb Saunier about the dog from Battersea"
-
-enquiry_two = Enquiry.new(pet_id: cat.id, user_id: user_two.id, message: "I would like to adopt this cat, because cats are obviously better")
-enquiry_two.save!
-puts "enquiry made by Battersea about the dog from Battersea"
+# this doesn't work
+# Enquiry.create(user_id: user_one.id, pet_id: dog4.id, message: "Thanks for accepting my booking", date: Tue, 22 Jun 2021 12:00:00 UTC +00:00)
+# puts "Linda McDowel booked a playdate with Vencel"
 
