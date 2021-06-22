@@ -27,13 +27,72 @@ nav {
   // opacity: 0.8;
   padding-left: 56px;
   padding-right:32px;
+  #sign-up-section {
+     align-items: center;
+    .sign-up {
+      text-decoration: none;
+      margin: auto;
+      color: white;
+      padding-right: 28px;
+      font-size: 14px;
+      text-shadow: 2px 3px 15px rgba(0,0,0,0.9);
+      &:hover{
+        color: $pawsome-yellow ;
+        transition: 0.2s color ease;
+      }
+    }
+  }
 }
 
+.navbar-white-none {
+  justify-content: space-between;
+  background: transparent;
+  // opacity: 0.8;
+  padding-left: 56px;
+  padding-right:32px;
+  background: $light-gray;
+  transition: 0.3s background ease;
+  #sign-up-section {
+    align-items: center;
+    .sign-up {
+      text-decoration: none;
+      margin: auto;
+      padding-right: 28px;
+      font-size: 14px;
+      color: $pawsome-darkgrey;
+      text-shadow: 0px 0px 0px rgba(0,0,0,0.0);
+      &:hover{
+        color: $pawsome-yellow ;
+        transition: 0.2s color ease;
+      }
+    }
+  }
+}
 
 .navbar-white {
+  justify-content: space-between;
+  background: transparent;
+  // opacity: 0.8;
+  padding-left: 56px;
+  padding-right:32px;
   background: $light-gray;
   transition: 0.3s background ease;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  #sign-up-section {
+    align-items: center;
+    .sign-up {
+      text-decoration: none;
+      margin: auto;
+      padding-right: 28px;
+      font-size: 14px;
+      color: $pawsome-darkgrey;
+      text-shadow: 0px 0px 0px rgba(0,0,0,0.0);
+      &:hover{
+        color: $pawsome-yellow ;
+        transition: 0.2s color ease;
+      }
+    }
+  }
 }
 
 #logo-set {
@@ -60,26 +119,13 @@ nav {
 }
 
 
-#sign-up-section {
-   align-items: center;
-  .sign-up {
-    text-decoration: none;
-    margin: auto;
-    color: black;
-    padding-right: 36px;
-    font-size: 14px;
-    &:hover{
-      color: $pawsome-yellow ;
-      transition: 0.2s color ease;
-    }
-  }
-}
 
 
-#logged {
-  text-decoration: none;
-  margin: auto;
-  color: black;
-  padding-right: 24px;
-  font-size: 14px;
-  }
+
+// #logged {
+//   text-decoration: none;
+//   margin: auto;
+//   color: black;
+//   padding-right: 24px;
+//   font-size: 14px;
+//   }

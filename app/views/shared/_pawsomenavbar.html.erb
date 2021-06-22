@@ -1,4 +1,8 @@
-<nav class="navbar-transparent fixed-top">
+<% if current_page?('/') %>
+  <nav class="navbar-transparent fixed-top">
+<% else %>
+  <nav class="navbar-white-none fixed-top">
+<% end %>
   <div id="logo-set">
     <div id="logo">
       <%= link_to 'Pawsome', root_path, class: "logo_text" %>
@@ -21,20 +25,16 @@
 
   <div id="sign-up-section" style="display:flex">
     <% if current_user %>
+      <p class="sign-up">
+        Hello ,  <%= current_user.first_name %>
+      </p>
       <div class="button">
         <%= link_to 'Profile', profile_path, class: "sign-up" %>
       <span class= "<%= 'new-notification' if  current_user.unread_messages > 0 %>" ></span>
       </div>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "sign-up" %>
-      <p id="logged">
-        Hello ,  <%= current_user.first_name %>
-      </p>
-
-          <!-- <a class="dropdown-item" href="#">Action</a> -->
-        </div>
-      </div>
       <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-airpnp" %>
+        <%= cl_image_tag current_user.photo.key, crop: :fill, class: "avatar-hp" %>
       <% else %>
       <% end %>
     <% else %>

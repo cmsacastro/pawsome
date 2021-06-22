@@ -3,7 +3,7 @@ class PetsController < ApplicationController
   
   def index
     if current_user && current_user.species != "no preference"
-        @pets = Pet.where(species: current_user.species).sort_by{ |pet| -pet.match_pets(current_user) }
+      @pets = Pet.where(species: current_user.species).sort_by{ |pet| -pet.match_pets(current_user) }
     else
       @pets = Pet.all
     end
@@ -22,10 +22,10 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     session[:pet_id] = @pet.id
     if current_user && current_user.species != "no preference"
-      @pets = Pet.where(species: current_user.species).sort_by{ |pet| -pet.match_pets(current_user) }
+      @pets = Pet.where(species: current_user.species).where.not(id: @pet.id).sort_by{ |pet| -pet.match_pets(current_user) }
       @selected_pets = @pets.first(9)
     else
-      @selected_pets = Pet.last(9)
+      @selected_pets = Pet.where(species: @pet.species).where.not(id: @pet.id).first(9)
     end
   end
 
