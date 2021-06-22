@@ -7,6 +7,8 @@ export const submitOnEnter = () => {
         {
             event.preventDefault();
             document.getElementById('new_message').submit();
+            window.scrollTo(0,document.body.scrollHeight);
+
         }
     });
   }

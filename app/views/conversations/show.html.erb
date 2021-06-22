@@ -12,13 +12,14 @@
       <% end %>
     </div>
 
-<!-- TODO: add (press 'enter' to send) functionality -->
-
-    <div class="message-submit">
-      <%= simple_form_for [ @conversation, @message ], wrapper: :inline_form, id: 'form' do |f| %>
-        <%= f.input :body, label: false, placeholder: "Type a message...", id: "chat-input", input_html: {:autofocus => true}  %>
-        <%= f.submit class: 'chat-button' %>
-      <% end %>
+    <!-- FYI 20/6/21 input_html autofocus is what works on safari, NOT the JS -->
+    <div class="form-container">
+      <div class="message-submit">
+        <%= simple_form_for [ @conversation, @message ], wrapper: :inline_form, id: 'form' do |f| %>
+          <%= f.input :body, label: false, placeholder: "Type a message...", id: "chat-input", autofocus: true  %>
+          <%= f.submit class: 'chat-button' %>
+        <% end %>
+      </div>
     </div>
     <% if @pet.present? %>
       <span><%= link_to "Book a play date with #{@pet.name}", new_pet_enquiry_path(@pet), class: 'back d-inline-block w-100 mt-2' %></span>

@@ -9,10 +9,10 @@ const initChatroomCable = () => {
   const messagesContainer = document.getElementById('messages');
   if (messagesContainer) {
     const id = messagesContainer.dataset.conversationId;
+    window.scrollTo(0,document.body.scrollHeight);
 
     consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
       received(data) {
-        document.getElementById('message_body').focus();
         // called when data is broadcast in the cable
         const response = JSON.parse(data);
         const senderId = response.user_id;
