@@ -1,9 +1,9 @@
 <div class="row" style="margin-top: 100px;">
   <div class="col-12 col-md-6 offset-md-3 bg-white px-3 py-2 rounded-lg shadow-lg">
     <%= simple_form_for [@pet, @enquiry] do |f| %>
-      <%= f.input :message, label: 'Write a message', placeholder: "eg: Is this pet available?" %>
+      <%= f.input :message, label: "Write a message to #{@pet.user.company_name}:", placeholder: "eg: any special requirements", autofucus: true %>
       <%= f.input :date, as: :string %>
-      <%= f.submit 'Submit enquiry', class: "back" %>
+      <%= f.submit 'Book your playdate', class: "" %>
     <% end %>
   </div>
 </div>
