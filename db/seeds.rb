@@ -11,9 +11,13 @@ require "open-uri"
 
 # One user who is a 'seller'
 Enquiry.destroy_all
+puts "All playdates deleted"
+Conversation.destroy_all
+puts "All conversations deleted"
 User.destroy_all
+puts "All users deleted"
 Pet.destroy_all
-puts "DB wiped"
+puts "All pets wiped"
 
 user_one = User.new(email: "one@example.com", password: "123456", first_name: "Linda", last_name: "McDowell", company_name: "", nickname: "Mc-D", address:"60 Claylands Rd, London SW8 1PH")
 file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624109798/photo-1604983361403-ac3d3cbac41d_kjaeff.jpg')
@@ -25,7 +29,7 @@ user_two = User.new(email: "two@example.com", password: "123456", first_name: "J
 file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624109608/photo-1557862921-37829c790f19_oojors.jpg')
 user_two.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 user_two.save!
-puts "All dogs Matter created."
+puts "Jonh Smith from All Dogs Matter created."
 
 user_three = User.new(email: "three@example.com", password: "123456", first_name: "Sally", last_name: "Fields", company_name: "", nickname: "Sally", address:"16a Griffiths Road, London SW19 1SP")
 
@@ -63,7 +67,7 @@ dog = Pet.new(
   Over time, we are seeing he is starting to come out of his shell and growing in confidence.",
   user_id: user_two.id, 
   address: user_two.address, 
-  cost: 100, 
+  cost: 150,
   garden: true,
   other_children: true,
   other_pets: false, 
@@ -80,15 +84,15 @@ dog.save!
 puts "dog created1"
 
 dog2 = Pet.new(
-  name: "Vereny", 
+  name: "Shelby",
   species: "dog", 
   age: 4, 
   breed: "Yorkshire terrier", 
   status: "available", 
-  description: "Vereny is a kind, caring and lovely girl. She is great with children and other dogs. Vereny loves cuddles, being outside and exploring but she would also like to have a loving family and a warm couch to sleep on.", 
+  description: "Shelby is a kind, caring and lovely girl. She is great with children and other dogs. Shelby loves cuddles, being outside and exploring but she would also like to have a loving family and a warm couch to sleep on.",
   user_id: user_four.id, 
   address: user_four.address, 
-  cost: 200, 
+  cost: 155,
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -124,7 +128,7 @@ dog3 = Pet.new(
   description: "Lassie is a VERY friendly and caring girl! She is a breed which is known for their intelligence, obedience, kindness and loyalty… she was even found in town greeting people and walking up the street beside them! Lassie is great with children (8+ due to her size) and other dogs, she would make a perfect fit in a loving family. ", 
   user_id: user_four.id, 
   address: user_four.address, 
-  cost: 100, 
+  cost: 155,
   garden: true,
   other_children: true,
   other_pets: true, 
@@ -147,7 +151,7 @@ dog4 = Pet.new(
   description: "Vencel is a very friendly and nice boy, He is great with children and other dogs. He LOVES getting tummy rubs and going on walks…. so it shouldn’t be too hard to get him used to his new life! ", 
   user_id: user_five.id, 
   address: user_five.address, 
-  cost: 300, 
+  cost: 135,
   garden: true,
   other_children: true,
   other_pets: true, 
@@ -170,7 +174,7 @@ dog5 = Pet.new(
   description: "Melinda is one of our newest addition to the shelter , she is very friendly and nice towards people, and is good with other dogs and children ( all ages).", 
   user_id: user_six.id, 
   address: user_six.address, 
-  cost: 200, 
+  cost: 10,
   garden: true,
   other_children: true,
   other_pets: true, 
@@ -193,7 +197,7 @@ dog6 = Pet.new(
   description: "Tomi is a very friendly and lovely boy. He is good with other dogs and children ( all ages). Tomi likes to be cuddled and LOVES to smile, he is always smiling. He was rescued after we found him wandering around on the street.", 
   user_id: user_two.id, 
   address: user_two.address, 
-  cost: 400, 
+  cost: 200,
   garden: true,
   other_children: true,
   other_pets: true, 
@@ -201,7 +205,15 @@ dog6 = Pet.new(
   special_needs: false,
   sex: "male" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624115194/photo-1554456854-55a089fd4cb2_yieh4a.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/labrador-4_v0tye4.jpg')
+  dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/labrador-1_trtg0u.jpg')
+  dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+    file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/labrador-3_krfbss.jpg')
+  dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+    file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/labrador-2_iqunlj.jpg')
+  dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+    file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/labrador-5_uika9c.jpg')
   dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog6.save!
@@ -216,7 +228,7 @@ dog7 = Pet.new(
   description: "Zara is a very lovely, playful and friendly girl, she is highly energetic and a scavenger so will need lots of exercise and training. She is good with children, dogs and cats although we do not recommend her for first time owners. At the moment Zara has heartworm and will need her medicine 2x a day which we provide.", 
   user_id: user_four.id, 
   address: user_four.address, 
-  cost: 100, 
+  cost: 155,
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -224,7 +236,15 @@ dog7 = Pet.new(
   special_needs: true,
   sex: "female" )
 
-  file = URI.open('https://images.unsplash.com/photo-1532275522382-fc0742e109d9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/Jack-russell-1_btwnil.jpg')
+  dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/jack-russell-2_abofsl.jpg')
+  dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/jack-russell-3_wpcax3.jpg')
+  dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/jack-russell-4_gdp2k3.jpg')
+  dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/jack-russell-5_aihyem.jpg')
   dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog7.save!
@@ -239,7 +259,7 @@ dog8 = Pet.new(
   description: "Beautiful little Benji is a worried soul looking for savvy owners that will accept his needs and give him all the patience and TLC that he needs. Unfortunately Benji has bitten in his previous home, largely around handling when putting on a harness. This is an area where new owners would need to take things very slow with Benji and will need on-going work.", 
   user_id: user_four.id, 
   address: user_four.address, 
-  cost: 400, 
+  cost: 155,
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -262,7 +282,7 @@ dog9 = Pet.new(
   description: "Yoda, not one to be picked on looks alone, has quite a history of tricky behaviour that will need to be continued to be worked on and managed in his new home. Although he is young, it is important for prospective owners to appreciate that Yoda has always been a worried and anxious dog and devoted training alongside of management are the keys he needs to keep on improving.", 
   user_id: user_four.id, 
   address: user_four.address, 
-  cost: 100, 
+  cost: 155,
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -285,7 +305,7 @@ dog10 = Pet.new(
   description: "Luce is an absolutely lovely little lady. She is blind so is looking for understanding owners with a home that is suitable for her- a place in which she can learn and adapt, as she does bump into things. Despite this she loves her walks and still has plenty of energy!", 
   user_id: user_four.id, 
   address: user_four.address, 
-  cost: 300, 
+  cost: 155,
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -308,7 +328,7 @@ dog11 = Pet.new(
   description: "Ziggy is a lovely boy but is also quite an anxious lad and if very worried around new people and dogs, so will need calm, patient owners who would be willing to slowly introduce him to these new things in his own time.", 
   user_id: user_five.id, 
   address: user_five.address, 
-  cost: 500, 
+  cost: 135,
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -331,7 +351,7 @@ dog12 = Pet.new(
   description: "Meet Edith! She is a beautiful dog that came into our care as a stray. Since being in our care, she has undergone multiple leg surgeries, BOAS surgery and will need ongoing hydrotherapy therefore, her new owners will need to be committed to her ongoing medical finances.", 
   user_id: user_six.id, 
   address: user_six.address, 
-  cost: 600, 
+  cost: 60,
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -339,7 +359,15 @@ dog12 = Pet.new(
   special_needs: false,
   sex: "female" )
 
-  file = URI.open('https://images.unsplash.com/photo-1478991031579-5f22c0ee9c9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/yorkie-2_olr1fy.jpg')
+  dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/yorkie-5_wvpydn.jpg')
+  dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/yorkie-4_qbort7.jpg')
+  dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/yorkie-1_u9x4rt.jpg')
+  dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/yorkie-3_ibh6t8.jpg')
   dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog12.save!
@@ -354,7 +382,7 @@ dog13 = Pet.new(
   description: "Bee is a beautiful and energetic girl who adores playing with her toys and playing fetch games. She is looking for a home in a quiet location with access to rural walking routes, where she can get to know her new owners without many distractions and work on her training.", 
   user_id: user_five.id, 
   address: user_five.address, 
-  cost: 800, 
+  cost: 135,
   garden: false,
   other_children: true,
   other_pets: false, 
@@ -376,7 +404,7 @@ dog14 = Pet.new(
   description: "Mia is a bouncy, outgoing and affectionate girl who is looking for people prepared to help her settle and get used to the sights and sounds of a new home.", 
   user_id: user_six.id, 
   address: user_six.address, 
-  cost: 200, 
+  cost: 80,
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -398,7 +426,7 @@ dog16 = Pet.new(
   description: "Jack is quiet chap who's not one for too much of a fuss. From what we've seen of him at Old Windsor, Jack is happy in the company of people but prefers to keep himself to himself. Jack does appear worried by some people and will choose to keep his distance.", 
   user_id: user_five.id, 
   address: user_five.address, 
-  cost: 50, 
+  cost: 135,
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -421,7 +449,7 @@ dog17 = Pet.new(
   description: "This gorgeous but insecure Bulldog is looking for a family who will help him settle into his new home at his own pace. Once Ezra has come around, he has shown to be very loving dog and will be a delight in the home.", 
   user_id: user_four.id, 
   address: user_four.address, 
-  cost: 100, 
+  cost: 155,
   garden: false,
   other_children: true,
   other_pets: true, 
@@ -444,7 +472,7 @@ dog18 = Pet.new(
   description: "Phoebe is a young adult Greyhound with lovely manners but can be a little shy when first meeting people. Phoebe's new owners will need to be prepared to take things slow and build a bond with her. She loves playing with tennis balls so making friends with Phoebe will be lots of fun.", 
   user_id: user_two.id, 
   address: user_two.address, 
-  cost: 200, 
+  cost: 220,
   garden: true,
   other_children: false,
   other_pets: true, 
@@ -467,7 +495,7 @@ dog19 = Pet.new(
   description: "Jessie is a loving and friendly terrier who will want all your devoted attention. She was found as a stray so we do not have any history on her past home but she has made quite the impression on all the staff here at Battersea Brands Hatch. She is looking for owners who have had experience with terriers previously.", 
   user_id: user_four.id, 
   address: user_four.address, 
-  cost: 100, 
+  cost: 155,
   garden: false,
   other_children: false,
   other_pets: true, 
@@ -487,13 +515,4 @@ cat.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 cat.save!
 puts "cat created"
-
-
-enquiry_one = Enquiry.new(pet_id: dog.id, user_id: user_one.id, message: "I would like to adopt this dog, even though cats are obviously better")
-enquiry_one.save!
-puts "enquiry made by Seb Saunier about the dog from Battersea"
-
-enquiry_two = Enquiry.new(pet_id: cat.id, user_id: user_two.id, message: "I would like to adopt this cat, because cats are obviously better")
-enquiry_two.save!
-puts "enquiry made by Battersea about the dog from Battersea"
 
