@@ -38,6 +38,7 @@
       text-decoration: none;
       color: white;
       border: 1px solid white;
+      color: transparent;
       background-color: transparent;
       transition: 0.3s background-color ease;
       border: 1px solid white
@@ -52,9 +53,8 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     padding: 36px;
     height: 130px;
-    color: white;
+    color: $white;
     i {
-      color: white;
       font-size: 36px;
       padding-right: 24px;
       margin-top:8px;

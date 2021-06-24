@@ -3,9 +3,7 @@ class PetsController < ApplicationController
   
   def index
     if current_user && current_user.species != "no preference"
-      @top_pets = Pet.where(species: current_user.species).sort_by{ |pet| -pet.match_pets(current_user) }
-      @pets = @top_pets.drop(1)
-      @top_pet = @top_pets.first
+      @pets = Pet.where(species: current_user.species).sort_by{ |pet| -pet.match_pets(current_user) }
     else
       @pets = Pet.all
     end
