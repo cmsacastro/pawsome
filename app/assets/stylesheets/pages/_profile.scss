@@ -50,9 +50,29 @@
   justify-content: space-around;
   h4 {
    font-size: 14px;
+   padding-top: 8px;
   }
   .round-img {
     margin-right: 48px;
+  }
+  .enquiry-img {
+    display:flex;
+    align-items: center;
+  }
+  .back {
+    font-size: 26px;
+  }
+}
+
+.conversation {
+  padding: 24px;
+  h4{
+    font-size: 20px;
+    padding-bottom: 24px;
+  }
+  .back {
+    font-size: 14px;
+    padding: 24px;
   }
 }
 .round-img {

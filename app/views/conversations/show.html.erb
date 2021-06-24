@@ -2,7 +2,7 @@
     <div class="title-container">
       <div class="conversation-title">
         <%= link_to "Back", profile_path, class: "back chat-back" %>
-        <h4>Your chat between with <%= @conversation.recipient.company_name %></h4>
+        <h4>Your chat with <%= @conversation.recipient.company_name %></h4>
         <% if @pet.present? %>
           <span class='booking-btn'><i class="far fa-calendar-alt"></i><%= link_to " Book a play date with #{@pet.name}", new_pet_enquiry_path(@pet) %></span>
         <% end %>
