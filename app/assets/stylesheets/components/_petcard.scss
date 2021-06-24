@@ -14,31 +14,22 @@ a:hover{
 }
 .pet-card-container {
   margin-top: 20px;
-  width: 100%;
-  flex-grow: 2;
-  height: 245px;
+  width: 760px ;
+  height: 230px;
   &:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    border-radius: 8px;
+    border-radius: 8px 8px 8px 8px;
   }
 }
 .pet-card {
-  width: 100% ;
   display: flex;
-  justify-content: space-between;
 }
 
-.top-pet {
-  background-color: $pawsome-yellow;
-  border-radius: 8px 8px 8px 8px;
-  padding: 12px;
-}
 .img-container {
-  border-radius: 8px;
+  border-radius: 8px 8px 8px 8px;
 }
 
 .right-card {
-  flex-grow: 2;
   margin: 8px 24px 8px 24px;;
   p {
     color: black;
@@ -50,7 +41,6 @@ a:hover{
   bottom: -8px;
   color:$pawsome-green;
   font-weight: bold;
-  font-size: 22px;
   text-align: right;
 }
 
@@ -89,7 +79,6 @@ a:hover{
   .back {
     text-decoration: none;
     color: #000000;
-    font-size: 12px;
     &:hover{
       text-decoration: none;
       color: $pawsome-yellow;
@@ -104,8 +93,8 @@ a:hover{
   // pet show page important info about me
   .pet-info-show {
     margin: 2px 24px 24px 0px;
-    padding-left: 24px;
-    padding-right: 56px;
+    padding-left: 80px;
+    padding-right: 80px;
     padding-top: 26px;
     padding-bottom: 36px;
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
@@ -118,46 +107,46 @@ a:hover{
     }
 
 // font awesome logo styling
+
     .fa-paw:before {
-        color: $pawsome-yellow;
-        margin-right: 10px;
-      }
-    .pet-info-show {
+      color: $pawsome-yellow;
+      margin-right: 10px;
+      
+    }
 
-      .fa-seedling:before {
-        color: $pawsome-yellow;
-        margin-right: 10px;
-        font-size: xx-large;
-      }
+    .fa-seedling:before {
+      color: $pawsome-yellow;
+      margin-right: 10px;
+      font-size: xx-large;
+    }
 
-      .fa-baby:before {
-        color: $pawsome-yellow;
-        margin-right: 17px;
-        font-size: xx-large;
-      }
+    .fa-baby:before {
+      color: $pawsome-yellow;
+      margin-right: 17px;
+      font-size: xx-large;
+    }
 
-      .fa-cat:before {
-        color: $pawsome-yellow;
-        margin-right: 10px;
-        font-size: xx-large;
-      }
-      .fa-dog:before {
-        color: $pawsome-yellow;
-        margin-right: 10px;
-        font-size: xx-large;
-      }
+    .fa-cat:before {
+      color: $pawsome-yellow;
+      margin-right: 10px;
+      font-size: xx-large;
+    }
+    .fa-dog:before {
+      color: $pawsome-yellow;
+      margin-right: 10px;
+      font-size: xx-large;
+    }
 
-      .fa-first-aid:before {
-        color: $pawsome-yellow;
-        margin-right: 10px;
-        font-size: xx-large;
-      }
+    .fa-first-aid:before {
+      color: $pawsome-yellow;
+      margin-right: 10px;
+      font-size: xx-large;
+    }
 
-      .fa-home:before {
-        color: $pawsome-yellow;
-        margin-right: 10px;
-        font-size: xx-large;
-      }
+    .fa-home:before {
+      color: $pawsome-yellow;
+      margin-right: 10px;
+      font-size: xx-large;
     }
 
 
@@ -241,26 +230,28 @@ a:hover{
 
       .playbutton {
         text-decoration: none;
-        color: $pawsome-yellow;
-        text-align: center;
-        font-size: 16px;
-        font-weight:bolder;
-        float:right;
-        text-align: right;
-        &:hover{
-          text-decoration: none;
-          color: $pawsome-yellow;
-          text-decoration: underline;
-          transition: 0.3s text-decoration ease;
+    color: $pawsome-yellow;
+    text-align: center;
+    background-color: transparent;
+    width: 180px;
+    color: white;
+    text-shadow: 2px 3px 20px rgba(0,0,0,0.1);
+    padding: 12px 16px 12px 16px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight:bolder;
+    background-color: $pawsome-yellow;
+    justify-self: left;
+    border: 1px solid $pawsome-yellow;
+    &:hover{
+      text-decoration: none;
+      color: $pawsome-yellow;
+      border: 1px solid $pawsome-yellow;
+      
+      background-color: transparent;
+      transition: 0.3s background-color ease;
+      
+      } 
+    }
 
-          }
-        }
-.favourite-button {
-  font-size: 32px;
-  color: $pawsome-yellow;
-  &:hover{
-    text-shadow: 0 0 10px rgba(255,203,116,1);
-    transition: 0.3s text-shadow ease;
-  }
-}
 // use me

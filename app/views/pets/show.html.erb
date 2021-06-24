@@ -1,19 +1,18 @@
-<div id="pet-show-container" style="width: 1200px; margin: auto; padding-top: 20px;">
+<div id="pet-show-container" style="width: 1100px; margin: auto; padding-top: 20px;">
 
 
   <div id="pet-image-container">
     <div>
       <%= link_to "Back to pets", pets_path, class: "back" %>
       
+      <div class="add-favorite" style="float: right;">
+        <%= link_to 'Book a play date', new_pet_enquiry_path(@pet), class: 'playbutton mr-2' %>
+        <%= link_to "Add to favorites", pet_favorite_pets_path(@pet), method: 'post', class: "back" %>
+      </div>
     </div>
     <br>
-    <div class="pet-show-title" style="display:flex; justify-content:space-between;">
+    <div class="pet-show-title">
         <h1>Meet <%= @pet.name %></h1>
-        <div class="add-favorite" style="float: right;">
-          <%= link_to pet_favorite_pets_path(@pet), method: 'post' do %>
-            <i class="far fa-heart favourite-button"></i>
-          <% end %>
-        </div>
     </div>
       <br><br>
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" >
@@ -82,30 +81,30 @@
         <%# <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
       <%# <%end%>
     <%# </div> %>
-    <div style="display: flex; justify-content: space-between; col-12 col-lg-8; margin-top: 24px; margin-bottom: 24px">
-      <div style="font-weight: 300; font-size: 13px; padding-right: 36px; margin-top: 48px">
+    <div style="display: flex; justify-content: space-between; col-12 col-lg-8">
+      <div style="font-weight: 300; font-size: 13px;">
       <br><br>
-        <h4 style="font-size: 22px;">About me</h4>
+        <h4>About me</h4>
         <hr>
         <div class="pet-show-about">
           <ul>
-            <li style="font-size:14px; font-weight:bold"><%= @pet.breed.capitalize %></li>
+            <li><i class="fas fa-paw"></i><%= @pet.breed.capitalize %></li>
             
             
-           <li><%= @pet.age %> years old</li>
+           <li><i class="fas fa-paw"></i>Age <%= @pet.age %></li>
             
             
-           <li><%= @pet.sex.capitalize%></li>
+           <li><i class="fas fa-paw"></i><%= @pet.sex.capitalize%></li>
             
             
+           <li><i class="fas fa-paw"></i><%= @pet.status.capitalize%></li>
           </ul>
         </div>
         <br><br>
         <div>
           <hr>
           
-          <p style="font-style: italic; font-size: 12px;"><%= @pet.description %></p>
-          <hr>
+          <%= @pet.description %>
         </div>
         <br>
 
@@ -113,27 +112,18 @@
       </div>
 
       <div class="pet-info-show-2 col-12 col-lg-5" >
-        <div class="adopt-style">
-          <h4 style="font-size:12px; font-weight:lighter">Availability:</h4>
-          <% if @pet.status == "available" %>
-            <p><i class="fas fa-check" style="color: #FFCB74"></i></p>
-          <% else %>
-            <p><i class="fas fa-times" style="color: #FFCB74"></i><p>
-          <% end %>
-        </div>
-        <hr>
           <div class="adopt-style">
-            <h4 style="font-size:12px; font-weight:lighter">Adoption Fee:</h4>
+            <h4>Adoption Fee</h4>
             <p>£<%= @pet.cost %></p>           
           </div>
           <hr>
           <div class="adopt-style">
-            <h4 style="font-size:12px; font-weight:lighter">Adoption Centre:</h4>
+            <h4>Adoption Centre</h4>
             <p><%= @pet.user.company_name %></p>
           </div>
           <hr>
           <div class="adopt-style">
-            <h4></h4>
+            
             <p><%= @pet.address %></p>
             
           </div>
@@ -206,8 +196,9 @@
       <div>
     </div>
   </div>  
-</div>
-<div style="margin-top:0px; font-weight: 400;" class="slider-container">
-  <h1>More Pets Like <%= @pet.name %></h1>
-  <%= render 'shared/carousel' %>
-</div>
+
+  <div style="margin-top:-60px; font-weight: 400;" class="slider-container">
+    <h1>More Pets Like <%= @pet.name %></h1>
+    <%= render 'shared/carousel' %>
+  </div>
+</div> 
