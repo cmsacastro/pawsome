@@ -1,4 +1,4 @@
-<div id="pet-show-container" style="width: 1300px; margin: auto; padding-top: 20px;">
+<div id="pet-show-container" style="width: 1100px; margin: auto; padding-top: 20px;">
 
 
   <div id="pet-image-container">
@@ -6,7 +6,7 @@
       <%= link_to "Back to pets", pets_path, class: "back" %>
       
       <div class="add-favorite" style="float: right;">
-        <%= link_to 'Book a play date', new_pet_enquiry_path(@pet), class: 'back mr-2' %>
+        <%= link_to 'Book a play date', new_pet_enquiry_path(@pet), class: 'playbutton mr-2' %>
         <%= link_to "Add to favorites", pet_favorite_pets_path(@pet), method: 'post', class: "back" %>
       </div>
     </div>
@@ -82,9 +82,9 @@
       <%# <%end%>
     <%# </div> %>
     <div style="display: flex; justify-content: space-between; col-12 col-lg-8">
-      <div style="font-weight: 300;">
+      <div style="font-weight: 300; font-size: 13px;">
       <br><br>
-        
+        <h4>About me</h4>
         <hr>
         <div class="pet-show-about">
           <ul>
@@ -114,20 +114,22 @@
       <div class="pet-info-show-2 col-12 col-lg-5" >
           <div class="adopt-style">
             <h4>Adoption Fee</h4>
-            <p>£<%= @pet.cost %></p>
-            <hr>
+            <p>£<%= @pet.cost %></p>           
           </div>
+          <hr>
           <div class="adopt-style">
             <h4>Adoption Centre</h4>
             <p><%= @pet.user.company_name %></p>
-            <hr>
           </div>
+          <hr>
           <div class="adopt-style">
-            <h4>Location</h4>
+            
             <p><%= @pet.address %></p>
-            <hr>
+            
           </div>
+          <hr>
           <!-- for post request, use simple form for. We WERE using wrong params -->
+        
             <%= simple_form_for Conversation.new do |f| %>
               <%= f.hidden_field :recipient_id, value: @pet.user.id %>
               <%= f.submit "Chat with #{@pet.user.company_name}" %>
@@ -136,7 +138,7 @@
     </div>
     <div class="pet-info-show" >
           
-          <div style="display: flex; justify-content: space-between; col-12 col-lg-6; font-weight: 300;"  class="pet-show-important">
+          <div style="display: flex; justify-content: space-between; col-12 col-lg-6; font-weight: 300; font-size: 13px;"  class="pet-show-important">
             <ul>
              <li><i class="fas fa-seedling"></i>
                 <% if @pet.garden == true %>
@@ -185,7 +187,7 @@
                   <%end%>
                 </li>
                 <br>
-                <li><i class="fas fa-paw"></i> Please enquire now </li>
+                <li><i class="fas fa-dog"></i> Can be pet tested </li>
                 <br>
               </ul>
             </div>
