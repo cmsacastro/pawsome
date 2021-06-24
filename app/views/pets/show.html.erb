@@ -10,8 +10,12 @@
     <div class="pet-show-title" style="display:flex; justify-content:space-between;">
         <h1>Meet <%= @pet.name %></h1>
         <div class="add-favorite" style="float: right;">
-          <%= link_to pet_favorite_pets_path(@pet), method: 'post' do %>
-            <i class="far fa-heart favourite-button"></i>
+          <% if FavoritePet.where(user: current_user, pet: @pet).any? %>
+              <i class="fas fa-heart favourite-button"></i>
+          <% else %>
+            <%= link_to pet_favorite_pets_path(@pet), method: 'post' do %>
+              <i class="far fa-heart favourite-button"></i>
+            <% end %>
           <% end %>
         </div>
     </div>

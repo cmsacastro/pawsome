@@ -17,7 +17,7 @@ class FavoritePetsController < ApplicationController
     @favorite_pet.user = current_user
     @favorite_pet.pet = Pet.find(params[:pet_id])
     if @favorite_pet.save
-      redirect_to profile_path
+      redirect_to pet_path(@favorite_pet.pet)
     else
       flash.now[:alert] = 'You have already favorited this pet, you egg'
       @pet = @favorite_pet.pet
