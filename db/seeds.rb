@@ -39,7 +39,7 @@ user_three.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg'
 user_three.save!
 puts "Sally Fields created."
 
-user_four = User.new(email: "four@example.com", password: "123456", first_name: "Susan", last_name: "Buckley", company_name: "Battersea Dogs & Cats Home", nickname: "Bux", address:"4 Battersea Park Rd, Nine Elms, London SW8 4AA")
+user_four = User.new(email: "four@example.com", password: "123456", first_name: "Susan", last_name: "Buckley", company_name: "Battersea Dogs & Cats Home", nickname: "Susan @ Battersea", address:"4 Battersea Park Rd, Nine Elms, London SW8 4AA")
 file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624110416/photo-1579119134757-5c38803f34fc_ljr1b1.jpg')
 user_four.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 user_four.save!

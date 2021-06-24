@@ -68,16 +68,33 @@
 }
 
 .conversation {
+  background-color: #f5f5f5;
   padding: 24px;
+  float: left;
+  margin-bottom: 8px;
   h4{
     font-size: 20px;
-    padding-bottom: 24px;
+    padding-bottom: 16px;
   }
   .back {
     font-size: 14px;
     padding: 24px;
   }
+  a {
+    padding-left: 0px !important;
+  }
 }
+
+.last-msg {
+  font-size: 17px !important;
+  font-style: italic;
+}
+
+.conversation-list{
+  margin-left: 0;
+  padding-left: 0;
+}
+
 .round-img {
   height: 150px;
   width: 150px;
@@ -121,7 +138,9 @@
   padding: 24px 52px 0px 52px;
 }
 
-
+.tab-new {
+  background-color: #fff2db;
+}
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
    color: $pawsome-yellow;
