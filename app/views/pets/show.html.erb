@@ -87,7 +87,7 @@
       <%# <%end%>
     <%# </div> %>
     <div style="display: flex; justify-content: space-between; col-12 col-lg-8; margin-top: 24px; margin-bottom: 24px">
-      <div style="font-weight: 300; font-size: 13px; padding-right: 36px; margin-top: 48px">
+      <div style="font-weight: 300; font-size: 13px; padding-right: 36px; margin-top: 24px">
       <br><br>
         <h4 style="font-size: 22px;">About me</h4>
         <hr>
@@ -110,6 +110,7 @@
           
           <p style="font-style: italic; font-size: 12px;"><%= @pet.description %></p>
           <hr>
+          <p>(*) To meet <%= @pet.name %> chat with <%= @pet.user.company_name %></p>
         </div>
         <br>
 
