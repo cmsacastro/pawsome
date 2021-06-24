@@ -20,15 +20,18 @@
 
 .profile-info{
   text-align: center;
-  p {
-    font-size: 12px;
-    font-weight: lighter;
-    margin: 0px;
-  }
   #profile-name{
     padding-top: 24px;
     font-size: 24px;
     margin: 0px;
+  }
+  #profile-info-text {
+    padding: 12px 48px 12px 48px;
+    p{
+      font-size: 14px;
+      font-weight: lighter;
+      margin: 0px;
+    }
   }
 }
 .profile-right{
@@ -50,9 +53,29 @@
   justify-content: space-around;
   h4 {
    font-size: 14px;
+   padding-top: 8px;
   }
   .round-img {
     margin-right: 48px;
+  }
+  .enquiry-img {
+    display:flex;
+    align-items: center;
+  }
+  .back {
+    font-size: 26px;
+  }
+}
+
+.conversation {
+  padding: 24px;
+  h4{
+    font-size: 20px;
+    padding-bottom: 24px;
+  }
+  .back {
+    font-size: 14px;
+    padding: 24px;
   }
 }
 .round-img {
