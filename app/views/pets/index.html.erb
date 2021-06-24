@@ -1,13 +1,51 @@
 <div id="main-container">
   <div id="pet-container">
-    <h1>Can you offer these pets a loving home? </h1>
+    <h1>Meet our pets </h1>
+    <hr>
+    <% if current_user && current_user.species != "no preference"  %>
+      <br>
+      <h3 style="font-size: 20px; font-weight:bolder; margin: 0px 24px 12px 0px;">Your Top Match: </h3>
+      <div class="pet-card-container " data-aos="fade-up">
+        <%= link_to pet_path(@top_pet.id) do %>
+          <div class="pet-card top-pet">
+            <div class="left-card">
+              <%= cl_image_tag @top_pet.photos.first.key, height: 245, width: 285, crop: :fill, :class=> 'img-container'%>
+            </div>
+            <div class="right-card">
+              <div style="display:flex; justify-content:space-between; margin-top: 8px;" >
+                <div>
+                  <p style="font-size: 12px;"><%= @top_pet.user.company_name.presence || @top_pet.user.first_name %></p>
+                  <p style="font-size: 10px; font-weight: lighter; color: grey; padding-bottom: 8px;"><%= @top_pet.user.address %></p>
+                </div>
+                <div>
+                  <% if current_user && current_user.species != "no preference" %>
+                    <p style="color: white;"id="matching"><%= @top_pet.match_pets(current_user) %>%</p>
+                    <p style=" text-align: center;font-size: 10px; font-weight: lighter; color: white; margin-bottom: 0px;">Match</p>
+                  <% end %>
+                </div>
+              </div>
+              <p style="font-size: 24px; margin-bottom: 0px;"><%= @top_pet.name %></p>
+              <p style="font-size: 12px; font-weight: bolder; margin-bottom: 0px;"><%= @top_pet.breed %></p>
+              <p style="font-size: 11px; font-weight: lighter; padding-bottom: 6px;"><%= @top_pet.age %> years old</p>
+              <p style="width: 80%;font-size: 10px; font-weight: lighter; font-style: italic; padding-bottom: 12px;"><%= @top_pet.description.slice(0, 100)%>...</p>
+              <div style="float: right;">
+                <p style="font-size: 10px; font-weight: lighter;">Adoption fee:</p>
+                <p style="font-size: 12px; font-weight: bolder; text-align: right;">£<%= @top_pet.cost %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <br> <br> <br>
+      <h1>Other pets that match your profile: </h1>
+    <% end %>
+
     <% @pets.each do |pet| %>
-      <hr>
       <div class="pet-card-container" data-aos="fade-up">
         <%= link_to pet_path(pet.id) do %>
           <div class="pet-card">
             <div class="left-card">
-              <%= cl_image_tag pet.photos.first.key, height: 230, width: 280, crop: :fill, :class=> 'img-container'%>
+              <%= cl_image_tag pet.photos.first.key, height: 245, width: 285, crop: :fill, :class=> 'img-container'%>
             </div>
             <div class="right-card">
               <div style="display:flex; justify-content:space-between; margin-top: 8px;" >
@@ -17,15 +55,15 @@
                 </div>
                 <div>
                   <% if current_user && current_user.species != "no preference" %>
-                    <p style="font-size: 10px; font-weight: lighter; color: grey; margin-bottom: 0px;">Matching:</p>
                     <p id="matching"><%= pet.match_pets(current_user) %>%</p>
+                    <p style="text-align: center; font-size: 10px; font-weight: lighter; color: grey;">Match</p>
                   <% end %>
                 </div>
               </div>
               <p style="font-size: 24px; margin-bottom: 0px;"><%= pet.name %></p>
               <p style="font-size: 12px; font-weight: bolder; margin-bottom: 0px;"><%= pet.breed %></p>
               <p style="font-size: 11px; font-weight: lighter; padding-bottom: 6px;"><%= pet.age %> years old</p>
-              <p style="font-size: 10px; font-weight: lighter; font-style: italic; padding-bottom: 12px;"><%= pet.description.slice(0, 100)%>...</p>
+              <p style=" width: 80%; font-size: 10px; font-weight: lighter; font-style: italic; padding-bottom: 12px;"><%= pet.description.slice(0, 100)%>...</p>
               <div style="float: right;">
                 <p style="font-size: 10px; font-weight: lighter;">Adoption fee:</p>
                 <p style="font-size: 12px; font-weight: bolder; text-align: right;">£<%= pet.cost %></p>
@@ -34,6 +72,7 @@
           </div>
         <% end %>
       </div>
+      <hr>
     <% end %>
   </div>
   <div style=" width: 500px;">
