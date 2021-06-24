@@ -18,7 +18,7 @@ class EnquiriesController < ApplicationController
     @enquiry.pet = @pet
     @enquiry.user = current_user
     if @enquiry.save
-      redirect_to pets_path
+      redirect_to profile_path
     else
       render :new
     end
