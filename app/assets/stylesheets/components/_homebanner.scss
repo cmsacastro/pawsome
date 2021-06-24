@@ -18,10 +18,8 @@
 }
 
 #home-button {
-    #pets{
-      text-decoration: none;
-      color: white;
-    }
+  text-decoration: none;
+  color: white;
     position:relative;
     top:-280px;
     left:320px;
@@ -37,10 +35,8 @@
     justify-self: left;
     border: 1px solid $pawsome-yellow;
     &:hover{
-      #pets{
-        text-decoration: none;
-        color: white;
-      }
+      text-decoration: none;
+      color: white;
       border: 1px solid white;
       color: transparent;
       background-color: transparent;

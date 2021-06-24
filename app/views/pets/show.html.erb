@@ -1,18 +1,20 @@
-<div id="pet-show-container">
+<div id="pet-show-container" style="width: 1100px; margin: auto; padding-top: 20px;">
 
 
   <div id="pet-image-container">
-    <%= link_to "Back to pets", pets_path, class: "back" %>
-    <br><br><br>
+    <div>
+      <%= link_to "Back to pets", pets_path, class: "back" %>
+      
+      <div class="add-favorite" style="float: right;">
+        <%= link_to 'Book a play date', new_pet_enquiry_path(@pet), class: 'playbutton mr-2' %>
+        <%= link_to "Add to favorites", pet_favorite_pets_path(@pet), method: 'post', class: "back" %>
+      </div>
+    </div>
+    <br>
     <div class="pet-show-title">
-      <h1>Meet <%= @pet.name %></h1>
+        <h1>Meet <%= @pet.name %></h1>
     </div>
-    <div class="add-favorite" style="float: right;">
-      <%= link_to 'Book a play date', new_pet_enquiry_path(@pet), class: 'back mr-2' %>
-      <%= link_to "Add to favorites", pet_favorite_pets_path(@pet), method: 'post', class: "back" %>
-    </div>
-
-    <br><br>
+      <br><br>
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" >
 
       <!--Controls-->
@@ -80,28 +82,28 @@
       <%# <%end%>
     <%# </div> %>
     <div style="display: flex; justify-content: space-between; col-12 col-lg-8">
-      <div>
+      <div style="font-weight: 300; font-size: 13px;">
       <br><br>
-        <h2>About me</h2>
+        <h4>About me</h4>
         <hr>
-        <div>
-          <h4>Breed</h4>
-          <%= @pet.breed %>
-          <br><br>
-          <h4>Age</h4>
-          <%= @pet.age %>
-          <br><br>
-          <h4>Sex</h4>
-          <%= @pet.sex%>
-          <br><br>
-          <h4>Status</h4>
-          <%= @pet.status%>
-          <br><br>
+        <div class="pet-show-about">
+          <ul>
+            <li><i class="fas fa-paw"></i><%= @pet.breed.capitalize %></li>
+            
+            
+           <li><i class="fas fa-paw"></i>Age <%= @pet.age %></li>
+            
+            
+           <li><i class="fas fa-paw"></i><%= @pet.sex.capitalize%></li>
+            
+            
+           <li><i class="fas fa-paw"></i><%= @pet.status.capitalize%></li>
+          </ul>
         </div>
-        
+        <br><br>
         <div>
           <hr>
-          <h4>Description</h4>
+          
           <%= @pet.description %>
         </div>
         <br>
@@ -110,22 +112,24 @@
       </div>
 
       <div class="pet-info-show-2 col-12 col-lg-5" >
-          <div>
+          <div class="adopt-style">
             <h4>Adoption Fee</h4>
-            <p>£<%= @pet.cost %></p>
-            <hr>
+            <p>£<%= @pet.cost %></p>           
           </div>
-          <div>
+          <hr>
+          <div class="adopt-style">
             <h4>Adoption Centre</h4>
             <p><%= @pet.user.company_name %></p>
-            <hr>
           </div>
-          <div>
-            <h4>Location</h4>
+          <hr>
+          <div class="adopt-style">
+            
             <p><%= @pet.address %></p>
-            <hr>
+            
           </div>
+          <hr>
           <!-- for post request, use simple form for. We WERE using wrong params -->
+        
             <%= simple_form_for Conversation.new do |f| %>
               <%= f.hidden_field :recipient_id, value: @pet.user.id %>
               <%= f.submit "Chat with #{@pet.user.company_name}" %>
@@ -134,44 +138,44 @@
     </div>
     <div class="pet-info-show" >
           
-          <div style="display: flex; justify-content: space-between; col-12 col-lg-6"  class="pet-show-important">
+          <div style="display: flex; justify-content: space-between; col-12 col-lg-6; font-weight: 300; font-size: 13px;"  class="pet-show-important">
             <ul>
-             <li><i class="fas fa-paw"></i>
+             <li><i class="fas fa-seedling"></i>
                 <% if @pet.garden == true %>
                   <%= "I need a garden" %>
                 <% else %>
                   <%= "I can live in an apartment" %>
                 <%end%>
              </li>
-              <br><br>
-              <li><i class="fas fa-paw"></i>
+              <br>
+              <li><i class="fas fa-baby"></i>
                 <% if @pet.other_children == true %>
                   <%= "I can live with children" %>
                 <% else %>
                   <%= "Sorry I'm not suitable to live with children :(" %>
                 <%end%>
               </li>
-                  <br><br>
-              <li><i class="fas fa-paw"></i>
+                  <br>
+              <li><i class="fas fa-cat"></i>
                 <% if @pet.other_pets == true %>
                   <%= "I love to live with other pets" %>
                 <% else %>
                   <%= "Im not great with other pets" %>
                 <%end%>
-              <br><br>
+              <br>
               </li>
             </ul>
             <div>
               <ul >
-                <li> <i class="fas fa-paw"></i>
+                <li> <i class="fas fa-first-aid"></i>
                   <% if @pet.special_needs == true %>
                     <%= "I require extra care. Please ask my carer for details" %>
                   <% else %>
                     <%= "I do not require any special care" %>
                   <%end%>
                 </li> 
-                <br><br>
-                <li><i class="fas fa-paw"></i>
+                <br>
+                <li><i class="fas fa-home"></i>
                   <% if @pet.available_time == 1 %>
                     <%= "I can be left unattended up to 3 hours per day" %>
                   <% elsif @pet.available_time == 2 %>
@@ -182,9 +186,9 @@
                     <%= "I can be left unattended for more than 10+ hours per day" %>
                   <%end%>
                 </li>
-                <br><br>
-                <li><i class="fas fa-paw"></i> Please enquire now </li>
-                <br><br>
+                <br>
+                <li><i class="fas fa-dog"></i> Can be pet tested </li>
+                <br>
               </ul>
             </div>
           </div>  
@@ -192,8 +196,9 @@
       <div>
     </div>
   </div>  
+
+  <div style="margin-top:-60px; font-weight: 400;" class="slider-container">
+    <h1>More Pets Like <%= @pet.name %></h1>
+    <%= render 'shared/carousel' %>
+  </div>
 </div> 
-<div class="slider-container">
-  <h1>More Pets Like <%= @pet.name %></h1>
-  <%= render 'shared/carousel' %>
-</div>
