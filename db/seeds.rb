@@ -205,7 +205,15 @@ dog6 = Pet.new(
   special_needs: false,
   sex: "male" )
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624115194/photo-1554456854-55a089fd4cb2_yieh4a.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/labrador-4_v0tye4.jpg')
+  dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/labrador-1_trtg0u.jpg')
+  dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+    file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/labrador-3_krfbss.jpg')
+  dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+    file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/labrador-2_iqunlj.jpg')
+  dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+    file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/labrador-5_uika9c.jpg')
   dog6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog6.save!
@@ -228,7 +236,15 @@ dog7 = Pet.new(
   special_needs: true,
   sex: "female" )
 
-  file = URI.open('https://images.unsplash.com/photo-1532275522382-fc0742e109d9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/Jack-russell-1_btwnil.jpg')
+  dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/jack-russell-2_abofsl.jpg')
+  dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/jack-russell-3_wpcax3.jpg')
+  dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/jack-russell-4_gdp2k3.jpg')
+  dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556199/jack-russell-5_aihyem.jpg')
   dog7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog7.save!
@@ -343,7 +359,15 @@ dog12 = Pet.new(
   special_needs: false,
   sex: "female" )
 
-  file = URI.open('https://images.unsplash.com/photo-1478991031579-5f22c0ee9c9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/yorkie-2_olr1fy.jpg')
+  dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/yorkie-5_wvpydn.jpg')
+  dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/yorkie-4_qbort7.jpg')
+  dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/yorkie-1_u9x4rt.jpg')
+  dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624556200/yorkie-3_ibh6t8.jpg')
   dog12.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 dog12.save!
@@ -491,8 +515,4 @@ cat.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 cat.save!
 puts "cat created"
-
-# this doesn't work
-# Enquiry.create(user_id: user_one.id, pet_id: dog4.id, message: "Thanks for accepting my booking", date: Tue, 22 Jun 2021 12:00:00 UTC +00:00)
-# puts "Linda McDowel booked a playdate with Vencel"
 
