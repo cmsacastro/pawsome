@@ -16,7 +16,7 @@ Pet.destroy_all
 puts "DB wiped"
 
 user_one = User.new(email: "one@example.com", password: "123456", first_name: "Linda", last_name: "McDowell", company_name: "", nickname: "Mc-D", address:"60 Claylands Rd, London SW8 1PH")
-file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624109798/photo-1604983361403-ac3d3cbac41d_kjaeff.jpg')
+file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624109306/christiana-rivers-O_XIvDy0pcs-unsplash_jfjedy.jpg')
 user_one.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 user_one.save!
 puts "Linda McDowell created"
@@ -29,7 +29,7 @@ puts "All dogs Matter created."
 
 user_three = User.new(email: "three@example.com", password: "123456", first_name: "Sally", last_name: "Fields", company_name: "", nickname: "Sally", address:"16a Griffiths Road, London SW19 1SP")
 
-file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624109306/christiana-rivers-O_XIvDy0pcs-unsplash_jfjedy.jpg')
+file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624109798/photo-1604983361403-ac3d3cbac41d_kjaeff.jpg')
 
 user_three.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 user_three.save!
