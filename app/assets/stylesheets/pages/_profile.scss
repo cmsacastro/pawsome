@@ -20,15 +20,18 @@
 
 .profile-info{
   text-align: center;
-  p {
-    font-size: 12px;
-    font-weight: lighter;
-    margin: 0px;
-  }
   #profile-name{
     padding-top: 24px;
     font-size: 24px;
     margin: 0px;
+  }
+  #profile-info-text {
+    padding: 12px 48px 12px 48px;
+    p{
+      font-size: 14px;
+      font-weight: lighter;
+      margin: 0px;
+    }
   }
 }
 .profile-right{
