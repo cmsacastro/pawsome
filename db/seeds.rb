@@ -102,17 +102,17 @@ dog2 = Pet.new(
   )
 
 
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624557594/kdktcqaubjysizzq86cvjad0a9tl.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624565008/yqlgsgl5dbdpdp8cmjqfhzsbm58i.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624557591/ga3ejwpjoh07flcdf16wagbmpv0q.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624565009/tj8vid0kfd582hjtkig8duu9q1up.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624557582/zs2l8trykvz049gb3dv8jvspe2y7.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624565014/y42olzpvcfl71f7lw7qb4ftwypso.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624557581/6lmnnop6jzn4ih83b8ljcgtkajos.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624565017/qa7y7xwkv0wt6a3tj7vxpni8ddtx.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624557572/xygy9ec7wqk7gxxermkv2z39m7ag.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624565021/w4tluaaeoo1bj9ssivf1rxvob005.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
-  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624557571/ql71w51079vjjbab8asu4y8lah8p.jpg')
+  file = URI.open('https://res.cloudinary.com/dk4ojzhp0/image/upload/v1624565024/2p5h4o72tgqsiwgh74vj5ivyq691.jpg')
   dog2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 
 
