@@ -20,7 +20,7 @@
                 <div>
                   <% if current_user && current_user.species != "no preference" %>
                     <p style="color: white;"id="matching"><%= @top_pet.match_pets(current_user) %>%</p>
-                    <p style=" text-align: center;font-size: 10px; font-weight: lighter; color: white; margin-bottom: 0px;">Match</p>
+                    <p style=" text-align: center;font-size: 12px; font-weight: lighter; color: white; margin-bottom: 0px;">Match</p>
                   <% end %>
                 </div>
               </div>
@@ -56,7 +56,7 @@
                 <div>
                   <% if current_user && current_user.species != "no preference" %>
                     <p id="matching"><%= pet.match_pets(current_user) %>%</p>
-                    <p style="text-align: center; font-size: 10px; font-weight: lighter; color: grey;">Match</p>
+                    <p style="text-align: center; font-size: 12px; font-weight: lighter; color: grey;">Match</p>
                   <% end %>
                 </div>
               </div>
