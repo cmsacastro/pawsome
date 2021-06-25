@@ -39,7 +39,7 @@
                 <div>
                   <%= link_to enquiry.pet.name, pet_path(enquiry.pet), :class => "back"%>
                   <h4>Visit date: <strong><%= enquiry.date.strftime('%A, %d %b %Y %l:%M %p') %></strong></h4>
-                  <h4>Location: <strong><%= enquiry.user.address %></strong></h4>
+                  <h4>Location: <strong><%= enquiry.pet.user.address %></strong></h4>
                   <p style= "font-size: 12px; font-style: italic; margin-top:16px;"><%= enquiry.pet.description %></p>
                   <%= simple_form_for Conversation.new do |f| %>
                     <%= f.hidden_field :recipient_id, value: enquiry.pet.user.id %>
