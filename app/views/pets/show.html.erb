@@ -96,7 +96,7 @@
             <li style="font-size:14px; font-weight:bold"><%= @pet.breed.capitalize %></li>
             
             
-           <li><%= @pet.age %> years old</li>
+           <li><%= @pet.age %><%= @pet.age > 1 ? ' years old' : ' year old' %></li>
             
             
            <li><%= @pet.sex.capitalize%></li>
@@ -108,7 +108,7 @@
         <div>
           <hr>
           
-          <p style="font-style: italic; font-size: 12px;"><%= @pet.description %></p>
+          <p style="font-style: italic; font-size: 14px;"><%= @pet.description %></p>
           <hr>
           <p>(*) To meet <%= @pet.name %> chat with <%= @pet.user.company_name %></p>
         </div>
@@ -136,10 +136,10 @@
             <h4 style="font-size:12px; font-weight:lighter">Adoption Centre:</h4>
             <p><%= @pet.user.company_name %></p>
           </div>
-          <hr>
+          <br>
           <div class="adopt-style">
             <h4></h4>
-            <p><%= @pet.address %></p>
+            <p style="font-weight:normal;"><%= @pet.address %></p>
             
           </div>
           <hr>

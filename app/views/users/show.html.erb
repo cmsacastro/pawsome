@@ -14,15 +14,15 @@
         <div id="profile-info-text">
           <p><%= current_user.email %></p>
           <p><%= current_user.address %></p>
-          <p style="padding-top: 12px;">Hey, I'm Linda! My partner and I are really interested in adopting a rescue dog. We're a family of 4 with 2 young children and plenty of outdoor space. I've come to Pawsome to find the perfect pooch, and give the pooch a perfect home.</p>
+          <p style="padding-top: 12px;">Hey, I'm Linda! My partner and I are really interested in adopting a rescue dog. We're a family of 4 with 2 young children and plenty of outdoor space. I've come to Pawsome to find the perfect pooch, and give them a perfect home.</p>
         </div>
       </div>
     </div>
     <div class="profile-right">
-      <nav style="height: 50px;">
+      <nav style="max-height: 60px;">
         <div class="nav nav-tabs " id="nav-tab" role="tablist">
           <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="true">Playdates</a>
-          <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Conversations</a>
+          <a class="nav-link <%= 'tab-new' if current_user.unread_messages > 0 %>" id="nav-profile-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Conversations</a>
           <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Favourite Pets</a>
         </div>
       </nav>
@@ -39,7 +39,7 @@
                 <div>
                   <%= link_to enquiry.pet.name, pet_path(enquiry.pet), :class => "back"%>
                   <h4>Visit date: <strong><%= enquiry.date.strftime('%A, %d %b %Y %l:%M %p') %></strong></h4>
-                  <h4>Location: <strong><%= enquiry.user.address %></strong></h4>
+                  <h4>Location: <strong><%= enquiry.pet.user.address %></strong></h4>
                   <p style= "font-size: 12px; font-style: italic; margin-top:16px;"><%= enquiry.pet.description %></p>
                   <%= simple_form_for Conversation.new do |f| %>
                     <%= f.hidden_field :recipient_id, value: enquiry.pet.user.id %>
@@ -54,17 +54,15 @@
         <div class="tab-pane fade " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
           <h2>Your Conversations</h2>
           <hr>
-          <ul>
+          <ul class="conversation-list">
             <% @conversations.each do |c| %>
-              <div class=" conversation container border">
-                <!-- TODO: Grab the sender name from the sender_id -->
+              <div class= "conversation container border">
                 <% if c.messages.any? %>
-                  <h4>Your chat with <strong><%= c.recipient.company_name %></strong> </h4>
+                  <h4 class="conversation-link"><strong> <%= link_to c.recipient.company_name, conversation_path(c.id) %></strong> </h4>
                   <% if c.messages.last.user_id == current_user.id %>
-                    <%= link_to "You wrote: #{c.messages.last.body}", conversation_path(c.id),class: "back" %>
+                    <%= link_to "You wrote: #{c.messages.last.body}", conversation_path(c.id),class: "back last-msg" %>
                   <% else %>
-                  <h4 class="font-weight-bold"><%= "New message"%></h4>
-                    <%= link_to "#{c.messages.last.user.nickname} wrote: #{c.messages.last.body}", conversation_path(c.id), class: "back" %>
+                    <%= link_to "#{c.messages.last.user.nickname} wrote: #{c.messages.last.body}", conversation_path(c.id), class: "back last-msg" %>
                   <% end %>
                 <% else %>
                   <p><%= link_to "This is a brand new conversation", conversation_path(c.id) %></p>
@@ -83,7 +81,7 @@
                 <div>
                   <h3 class="mb-1 mt-2"><%= f.pet.name %> </h3>
                   <p style="font-size: 14px; font-weight: bolder; margin-bottom: 0px;"><%= f.pet.breed %></p>
-                  <p style="font-size: 12px; font-weight: lighter; margin-bottom: 14px;"><%= f.pet.age %> years old</p>
+                  <p style="font-size: 12px; font-weight: lighter; margin-bottom: 14px;"><%= f.pet.age %><%= f.pet.age > 1 ? ' years old' : ' year old' %></p>
                   <%= link_to 'View pet', pet_path(f.pet), class: 'more-info' %>
                 </div>
               </div>
