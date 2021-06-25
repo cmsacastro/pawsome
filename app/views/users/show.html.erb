@@ -58,7 +58,7 @@
             <% @conversations.each do |c| %>
               <div class= "conversation container border">
                 <% if c.messages.any? %>
-                  <h4><strong><%= c.recipient.company_name %></strong> </h4>
+                  <h4 class="conversation-link"><strong> <%= link_to c.recipient.company_name, conversation_path(c.id) %></strong> </h4>
                   <% if c.messages.last.user_id == current_user.id %>
                     <%= link_to "You wrote: #{c.messages.last.body}", conversation_path(c.id),class: "back last-msg" %>
                   <% else %>
