@@ -1,7 +1,7 @@
 <% if current_user %>
   <div class="preferences">
     <div style="display:flex; justify-content:space-between;">
-      <h3 style="font-size: 14px; font-weight: bolder; padding-bottom: 12px">Your perfect pet just a few clicks away..</h3>
+      <h3 style="font-size: 14px; font-weight: bolder; padding-bottom: 12px">Your perfect pet is just a few clicks away!</h3>
       <i class="fas fa-arrow-down" data-toggle="collapse" data-target="#demo" style="padding-top: 4px; font-size: 14px;"></i>
      <!--  <button data-toggle="collapse" data-target="#demo">
         <i class="fas fa-arrow-down"></i>
@@ -11,18 +11,18 @@
     <%= simple_form_for(@user , url: update_preferences_path, :method => :get) do |f| %>
       <div id="demo" class="collapse">
         <%#= f.input :address, label: "Location:"%>
-        <%= f.input :species,label: "", collection: ["cat", "dog", "rodent", 'no preference'],
+        <%= f.input :species,label: "What are you interested in?", collection: [['Cat', "cat"], ['Dog', "dog"], ['Rodent',"rodent"], ['No preference','no preference']],
                       as: :radio_buttons,
                       input_html: { class: "tag-selector" },
                       item_wrapper_class: 'tag-item' %>
         <%#= f.input :breed, label: "Prefered Dog Breed", collection: Pet::DOGBREED %>
-        <%= f.input :sex, label: "", collection: ["male", "female", 'no preference'],
+        <%= f.input :sex, label: "", collection: [["Male","male"], ["Female","female"], ['No preference','no preference']],
                       as: :radio_buttons,
                       input_html: { class: "tag-selector" },
                       item_wrapper_class: 'tag-item' %>
         <%#= f.input :breed, label: "Prefered Cat Breed", collection: Pet::CATBREED %>
         <hr style="margin-top:12px; margin-bottom:12px;">
-        <%= f.input :age, label: "Do you have a prefered age?", :collection => [['Puppy', 1], ['1-7', 2], ['7-12', 3], ['+12', 4], ['no preference', 0]],
+        <%= f.input :age, label: "Do you have a prefered age?", :collection => [['0-1', 1], ['1-7', 2], ['7-12', 3], ['+12', 4], ['No preference', 0]],
                       as: :radio_buttons,
                       input_html: { class: "tag-selector" },
                       item_wrapper_class: 'tag-item' %>
@@ -32,19 +32,19 @@
                       item_wrapper_class: 'tag-item' %>
         <hr style="margin-top:12px; margin-bottom:12px;">
         <div style="display: flex; flex-wrap: wrap">
-          <%= f.input :garden, label: "", :collection => [['Garden', true], ["No Garden", false]],
+          <%= f.input :garden, label: "Do you have a garden?", :collection => [['Garden', true], ["No Garden", false]],
                         as: :radio_buttons,
                         input_html: { class: "tag-selector" },
                         item_wrapper_class: 'tag-item' %>
-          <%= f.input :other_pets, label: "", :collection => [['Have other pets', true], ["Don't have other pets", false]],
+          <%= f.input :other_pets, label: "Other pets?", :collection => [['Have other pets', true], ["Don't have other pets", false]],
                         as: :radio_buttons,
                         input_html: { class: "tag-selector" },
                         item_wrapper_class: 'tag-item' %>
-          <%= f.input :other_children, label: "", :collection => [['Have children', true], ["Don't have children", false]],
+          <%= f.input :other_children, label: "Do you have children?", :collection => [['Have children', true], ["Don't have children", false]],
                         as: :radio_buttons,
                         input_html: { class: "tag-selector" },
                         item_wrapper_class: 'tag-item' %>
-          <%= f.input :special_needs, label: "", :collection => [["Interested in pet with special needs", true], ["Not interested in pets with special needs", false]],
+          <%= f.input :special_needs, label: "Are you interested in a pet with special needs?", :collection => [["Interested in pet with special needs", true], ["Not interested in pets with special needs", false]],
                         as: :radio_buttons,
                         input_html: { class: "tag-selector" },
                         item_wrapper_class: 'tag-item' %>

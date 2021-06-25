@@ -26,7 +26,7 @@
               </div>
               <p style="font-size: 24px; margin-bottom: 0px;"><%= @top_pet.name %></p>
               <p style="font-size: 12px; font-weight: bolder; margin-bottom: 0px;"><%= @top_pet.breed %></p>
-              <p style="font-size: 11px; font-weight: lighter; padding-bottom: 6px;"><%= @top_pet.age %> years old</p>
+              <p style="font-size: 11px; font-weight: lighter; padding-bottom: 6px;"><%= @top_pet.age %><%= @top_pet.age > 1 ? ' years old' : ' year old' %></p>
               <p style="width: 80%;font-size: 10px; font-weight: lighter; font-style: italic; padding-bottom: 12px;"><%= @top_pet.description.slice(0, 100)%>...</p>
               <div style="float: right;">
                 <p style="font-size: 10px; font-weight: lighter;">Adoption fee:</p>
@@ -62,7 +62,7 @@
               </div>
               <p style="font-size: 24px; margin-bottom: 0px;"><%= pet.name %></p>
               <p style="font-size: 12px; font-weight: bolder; margin-bottom: 0px;"><%= pet.breed %></p>
-              <p style="font-size: 11px; font-weight: lighter; padding-bottom: 6px;"><%= pet.age %> years old</p>
+              <p style="font-size: 11px; font-weight: lighter; padding-bottom: 6px;"> <%= pet.age %><%= pet.age > 1 ? ' years old' : ' year old' %></p>
               <p style=" width: 80%; font-size: 10px; font-weight: lighter; font-style: italic; padding-bottom: 12px;"><%= pet.description.slice(0, 100)%>...</p>
               <div style="float: right;">
                 <p style="font-size: 10px; font-weight: lighter;">Adoption fee:</p>

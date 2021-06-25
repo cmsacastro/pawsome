@@ -81,7 +81,7 @@
                 <div>
                   <h3 class="mb-1 mt-2"><%= f.pet.name %> </h3>
                   <p style="font-size: 14px; font-weight: bolder; margin-bottom: 0px;"><%= f.pet.breed %></p>
-                  <p style="font-size: 12px; font-weight: lighter; margin-bottom: 14px;"><%= f.pet.age %> years old</p>
+                  <p style="font-size: 12px; font-weight: lighter; margin-bottom: 14px;"><%= f.pet.age %><%= f.pet.age > 1 ? ' years old' : ' year old' %></p>
                   <%= link_to 'View pet', pet_path(f.pet), class: 'more-info' %>
                 </div>
               </div>
