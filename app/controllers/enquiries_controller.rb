@@ -17,6 +17,7 @@ class EnquiriesController < ApplicationController
     @pet = Pet.find(params[:pet_id])
     @enquiry.pet = @pet
     @enquiry.user = current_user
+    session[:pet_id] = @pet.id
     if @enquiry.save
       redirect_to profile_path
     else

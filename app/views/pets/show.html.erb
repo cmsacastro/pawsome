@@ -117,7 +117,7 @@
         
       </div>
 
-      <div class="pet-info-show-2 col-12 col-lg-5" >
+      <div class="pet-info-show-2 col-12 col-lg-5 d-flex flex-column" >
         <div class="adopt-style">
           <h4 style="font-size:12px; font-weight:lighter">Availability:</h4>
           <% if @pet.status == "available" %>
@@ -126,12 +126,12 @@
             <p><i class="fas fa-times" style="color: #FFCB74"></i><p>
           <% end %>
         </div>
-        <hr>
+        <hr class="w-100">
           <div class="adopt-style">
             <h4 style="font-size:12px; font-weight:lighter">Adoption Fee:</h4>
             <p>£<%= @pet.cost %></p>           
           </div>
-          <hr>
+          <hr class="w-100">
           <div class="adopt-style">
             <h4 style="font-size:12px; font-weight:lighter">Adoption Centre:</h4>
             <p><%= @pet.user.company_name %></p>
@@ -142,13 +142,15 @@
             <p style="font-weight:normal;"><%= @pet.address %></p>
             
           </div>
-          <hr>
+          <hr class="w-100">
           <!-- for post request, use simple form for. We WERE using wrong params -->
-        
-            <%= simple_form_for Conversation.new do |f| %>
-              <%= f.hidden_field :recipient_id, value: @pet.user.id %>
-              <%= f.submit "Chat with #{@pet.user.company_name}" %>
-            <% end %>
+            <div class="d-flex justify-content-between align-items-end flex-grow-1">
+              <p class='booking-btn mb-0'><i class="far fa-calendar-alt"></i><%= link_to " Book a play date", new_pet_enquiry_path(@pet) %></p>
+              <%= simple_form_for Conversation.new do |f| %>
+                <%= f.hidden_field :recipient_id, value: @pet.user.id %>
+                <%= f.submit "Chat with the owner" %>
+              <% end %>
+            </div>
       </div>
     </div>
     <div class="pet-info-show" >
