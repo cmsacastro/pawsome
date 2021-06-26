@@ -10,6 +10,8 @@ require "open-uri"
 # Simple seed file
 
 # One user who is a 'seller'
+FavoritePet.destroy_all
+puts "All favorite pets destroyed"
 Enquiry.destroy_all
 puts "All playdates deleted"
 Conversation.destroy_all
